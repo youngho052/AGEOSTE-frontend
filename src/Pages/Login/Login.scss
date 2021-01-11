@@ -1,0 +1,80 @@
+.Login {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+
+  .LoginContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 450px;
+    padding: 10px 0;
+    background: #ffffff;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    .LoginLogo {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+
+    .IdForm {
+      .IdInput {
+        width: 300px;
+        height: 36px;
+        margin: 25px 0 0 47px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        outline: none;
+      }
+    }
+    .PwForm {
+      .PwInput {
+        width: 300px;
+        height: 36px;
+        margin: 10px 0 0 47px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        outline: none;
+      }
+    }
+
+    .LoginButton {
+      #LoginBtn {
+        width: 305px;
+        height: 36px;
+        margin: 10px 0 0 47px;
+        background-color: green;
+        border-radius: 5px;
+      }
+    }
+
+    .SignUp {
+      display: flex;
+      justify-content: center;
+      margin-top: 35px;
+
+      .SignupPage {
+        margin-left: 10px;
+        color: rgb(7, 32, 255);
+      }
+    }
+
+    .Forget {
+      display: flex;
+      flex-direction: column;
+      margin-top: 25px;
+      text-align: center;
+
+      .ForgetId {
+        margin-top: 10px;
+        color: rgb(7, 32, 255);
+      }
+    }
+  }
+}
