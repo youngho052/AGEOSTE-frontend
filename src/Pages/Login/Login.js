@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import LoginInput from '../../Components/LoginInput';
+import LoginInput from '../../Components/LoginInput/LoginInput';
 import './Login.scss';
 import '../../Styles/reset.scss';
 
@@ -23,7 +23,7 @@ class Login extends Component {
           </div>
           <div className="SignUp">
             <span>처음이신가요?</span>
-            <Link className="SignupPage">회원가입</Link>
+            <Link to="/signup" className="SignupPage">회원가입</Link>
           </div>
           <div className="Forget">
             <span>아이디(이메일) 비밀번호를 잊으셨나요?</span>

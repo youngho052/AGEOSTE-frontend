@@ -24,20 +24,27 @@
     }
 
     .IdForm {
+      display: flex;
+      justify-content: center;
+
       .IdInput {
         width: 300px;
         height: 36px;
-        margin: 25px 0 0 47px;
+        margin-top: 25px;
         border: 1px solid #000;
         border-radius: 5px;
         outline: none;
       }
     }
+
     .PwForm {
+      display: flex;
+      justify-content: center;
+
       .PwInput {
         width: 300px;
         height: 36px;
-        margin: 10px 0 0 47px;
+        margin-top: 10px;
         border: 1px solid #000;
         border-radius: 5px;
         outline: none;
