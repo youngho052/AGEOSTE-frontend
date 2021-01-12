@@ -2,24 +2,25 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class NavbarUser extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navbarUser: ['fa-map-marker-alt', 'fa-user', 'fa-cart-plus'],
+    };
+  }
   render() {
+    const { navbarUser } = this.state;
     return (
       <ul className='NavbarUser'>
-        <li>
-          <Link to='/' className="test">
-            <i className='fas fa-map-marker-alt'></i>
-          </Link>
-        </li>
-        <li>
-          <Link to='/'>
-            <i className='far fa-user'></i>
-          </Link>
-        </li>
-        <li>
-          <Link to='/'>
-            <i className='fas fa-cart-plus'></i>
-          </Link>
-        </li>
+        {navbarUser.map((list, idx) => {
+          return (
+            <li key={idx}>
+              <Link to='/'>
+                <i className={`far ${list}`} />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     );
   }

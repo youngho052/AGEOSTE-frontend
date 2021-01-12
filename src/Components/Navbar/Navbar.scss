@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 25px;
+  
   .NavbarMenu {
     display: flex;
     align-items: center;
@@ -12,11 +13,13 @@
         color: #000;
       }
     }
+    
     li.myPolo a {
       color: #dd1785;
     }
   }
-	.NavbarUser{
+  
+  .NavbarUser{
 		display: flex;
 		align-items: center;
 		li{
