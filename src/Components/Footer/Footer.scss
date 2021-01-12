@@ -1,0 +1,116 @@
+.Footer {
+  font-size: 14px;
+  .FooterTopMenu {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    li {
+      text-align: center;
+      a {
+        color: rgb(62, 62, 62);
+        span {
+          margin-bottom: 15px;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .FooterSubMenu {
+    padding: 80px 25px 80px 25px;
+    background-color: #f4f4f4;
+    .footerContainer {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .FooterMemberShip {
+        h4 {
+          display: flex;
+          align-items: center;
+          img {
+            width: 45px;
+            height: 43px;
+          }
+          span {
+            padding-left: 10px;
+            display: block;
+            font-size: 16px;
+          }
+        }
+        p {
+          margin-top: 10px;
+          font-size: 12px;
+          color: #454545;
+        }
+        .enrollment {
+          display: block;
+          width: 100px;
+          padding: 10px;
+          margin-top: 15px;
+          background-color: #000;
+          font-size: 16px;
+          text-align: center;
+          color: #fff;
+          border-radius: 20px;
+        }
+        span.storeNumber {
+          padding: 20px 0;
+          font-size: 13px;
+          color: rgb(138, 138, 138);
+        }
+        .findStore {
+          padding: 8px 12px;
+          background-color: #fff;
+          text-align: center;
+          font-size:13px;
+          color: #454545;
+          border: 1px solid rgb(218, 218, 218);
+          border-radius: 25px;
+        }
+      }
+      .FooterAbout,
+      .FooterCollection,
+      .FooterHelp {
+        h4 {
+          margin-bottom: 20px;
+          font-size: 14px;
+          color: #a0a0a0;
+        }
+        ul {
+          li {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #737373;
+            a {
+              color: #737373;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footerInfo {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 25px;
+    font-size: 11px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #e6e6e6;
+    address,
+    .insurance {
+      flex: 1;
+      color:#a0a0a0;
+    }
+  }
+  .siteMap{
+    display: flex;
+    align-items: center;
+    padding:40px 25px;
+    li{
+      padding:0 5px;
+      color:#a0a0a0;
+    }
+  }
+}
