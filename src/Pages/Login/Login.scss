@@ -38,8 +38,8 @@
     }
 
     .PwForm {
-      display: flex;
-      justify-content: center;
+      position: relative;
+      left: 46px;
 
       .PwInput {
         width: 300px;
@@ -49,6 +49,13 @@
         border-radius: 5px;
         outline: none;
       }
+
+      .show {
+        position: absolute;
+        left: 270px;
+        top: 20px;
+        cursor: pointer;
+      }
     }
 
     .LoginButton {
@@ -56,8 +63,12 @@
         width: 305px;
         height: 36px;
         margin: 10px 0 0 47px;
-        background-color: green;
+        background-color: rgb(29, 255, 29);
         border-radius: 5px;
+      }
+
+      #LoginBtn:hover {
+        background-color: rgb(0, 187, 0);
       }
     }
 

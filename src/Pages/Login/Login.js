@@ -1,18 +1,49 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import LoginInput from '../../Components/LoginInput/LoginInput';
 import './Login.scss';
 import '../../Styles/reset.scss';
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      hiddenPw: true
+    }
+  }
+
+  showPassword = () => {
+    this.setState({hiddenPw : !this.state.hiddenPw});
+  }
+
   render() {
+    const {hiddenPw} = this.state;
+    const icon = hiddenPw ? "fas fa-eye-slash" : "fas fa-eye";
+
     return (
       <div className="Login">
         <div className="LoginContainer">
           <div className="LoginLogo">
-            <h1>AGEOSTE</h1>
+            <h1>로그인</h1>
           </div>
-          <LoginInput />
+          <div className="IdForm">
+          <input
+            className="IdInput" 
+            type="text" 
+            placeholder="아이디(이메일)" 
+          />
+        </div>
+        <div className="PwForm">
+          <input
+            className="PwInput"
+            type={hiddenPw ? "password" : "text"}
+            placeholder="비밀번호"
+          />
+          <div className="show" onClick={this.showPassword}>
+            <i key={icon}>
+              <span className={icon} />
+            </i>
+          </div>     
+        </div>
           <div className="LoginButton">
             <button
               id="LoginBtn"
