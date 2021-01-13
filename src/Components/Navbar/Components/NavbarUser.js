@@ -16,7 +16,7 @@ class NavbarUser extends Component {
           return (
             <li key={idx}>
               <Link to='/'>
-                <i className={`far ${list}`} />
+                <i className={`fas ${list}`} />
               </Link>
             </li>
           );
