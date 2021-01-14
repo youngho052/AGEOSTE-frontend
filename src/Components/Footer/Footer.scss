@@ -82,10 +82,8 @@
           border-radius: 25px;
         }
       }
-
-      .FooterAbout,
-      .FooterCollection,
-      .FooterHelp {
+      
+      .footerListMenu {
         h4 {
           margin-top: 10px;
           margin-bottom: 20px;
@@ -107,10 +105,10 @@
       }
     }
   }
+
   .footerInfo {
     display: flex;
     flex: 1;
-    width: 100%;
     padding: 25px;
     font-size: 11px;
     background-color: #f4f4f4;
@@ -121,6 +119,7 @@
       color: #a0a0a0;
     }
   }
+
   .siteMap {
     display: flex;
     align-items: center;

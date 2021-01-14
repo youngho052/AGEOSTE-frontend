@@ -12,20 +12,20 @@ class Footer extends Component {
         <FooterSubMenu />
         <div className='footerInfo'>
           <address>
-            <span className='d_block'>
+            <span className='d__block'>
               (주)아고스테ᅵ대표이사 위고두ᅵ서울특별시 강남구 선릉 위워크
             </span>
-            <span className='d_block'>
+            <span className='d__block'>
               사업자등록번호120-123-4567891 사업자정보확인
               ▶ᅵ통신판매업신고번호제 2021-서울홍대-01010호123-456
             </span>
-            <span className='d_block'>
+            <span className='d__block'>
               개인정보관리책임자: 유재현 CUSTOMER SERVICE TEL 1588-155 ,
               CS-KR@AGEOSTE
             </span>
           </address>
           <div className='insurance'>
-            <span className='d_block'>
+            <span className='d__block'>
               서울보증보험(주) 이행보증보험 고객님은 안전거래를 위해
               <br />
               현금등으로 결제시 결제금액 전액에 대해 저희 쇼핑몰에서 가입한
