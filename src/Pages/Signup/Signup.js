@@ -82,7 +82,7 @@ class Signup extends Component{
           <div className="Name">
             <span>이름 *</span>
             <input
-              className="NameInput" 
+              className="NameInput input__padding" 
               type="text"
               placeholder="이름"
             />
@@ -90,7 +90,7 @@ class Signup extends Component{
           <div className="Id">
             <span>아이디 *</span>
             <input 
-              className="IdInput"
+              className="IdInput input__padding"
               type="text"
               placeholder="아이디(이메일)" 
             />
@@ -99,7 +99,7 @@ class Signup extends Component{
           <div className="Pw">
             <span>비밀번호 *</span>
             <input 
-              className="PwInput"
+              className="PwInput input__padding"
               type="password" 
               placeholder="비밀번호"
             />
@@ -111,7 +111,7 @@ class Signup extends Component{
           <div className="CheckPw">
             <span>비밀번호 확인*</span>
             <input 
-              className="PwInput"
+              className="PwInput input__padding"
               type="password" 
               placeholder="비밀번호 확인"
             />
@@ -119,7 +119,7 @@ class Signup extends Component{
           <div className="Phone">
             <span>휴대폰 번호*</span>
             <input 
-              className="PhoneInput"
+              className="PhoneInput input__padding"
               type="text" 
               placeholder="-제외 숫자만 입력(11자리)"
             />
@@ -128,7 +128,7 @@ class Signup extends Component{
           <div className="Birth">
             <span>생년월일</span>
             <input 
-              className="BirthInput" 
+              className="BirthInput input__padding" 
               type="text"
               placeholder="숫자만 입력(8자리)"
             />
