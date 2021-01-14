@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Product extends Component {
   render() {
@@ -10,14 +11,14 @@ class Product extends Component {
         <div className="product_block">
           <div className="product_img">
             <img src={imgUrl} alt="상품 이미지"/>
-            <div className="product_color">{`+ ${color} ` + (color === 1 ? 'color' : 'colors')}</div>
+            <div className={ color ? "product_color" : "dpn"}>{`+ ${color} ` + (color === 1 ? 'color' : 'colors')}</div>
           </div>
           <div className="product_info">
-            <div className="sale_per">{`${sale_per}% 세일`}</div>
+            <div className={sale_per ? "sale_per" : "dpn"}>{`${sale_per}% 세일`}</div>
             <div className="product_name">
-              <a href='#'>({sex}) {name}</a>
+              <Link href='#'>({sex}) {name}</Link>
             </div>
-            <div className="stars_container">
+            <div className={ stars ? "stars_container" : "dpn" }>
               <ul>
                 {
                   starNumToArr(stars).map((e, index) => {
@@ -27,8 +28,8 @@ class Product extends Component {
               </ul>
             </div>
             <div className="price">
-              <div className="sales_price">{`${(standard_price * (1 - sale_per / 100)).toLocaleString()}원`}</div>
-              <div className="standard_price">{`${Number(standard_price).toLocaleString()}원`}</div>
+              <div className={sale_per ? "sales_price" : "dpn"}>{`${(standard_price * (1 - sale_per / 100)).toLocaleString()}원`}</div>
+              <div className={sale_per ? "standard_price" : "no_sale"}>{`${Number(standard_price).toLocaleString()}원`}</div>
             </div>
           </div>
         </div>

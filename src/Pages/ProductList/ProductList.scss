@@ -2,10 +2,9 @@
   box-sizing: border-box;
 }
 
-// html,
-// body {
-//   height: 100%;
-// }
+.dpn {
+  display: none;
+}
 
 .category_title_container {
   display: flex;
@@ -96,6 +95,19 @@
 
         .product_name {
           margin-bottom: 10px;
+
+          a {
+            text-decoration: none;
+            color: black;
+
+            &:visited, &:focus, &:active {
+              text-decoration: none;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
 
         .stars_container {
@@ -113,6 +125,10 @@
 
           .sales_price {
             color: #4ca2cf;
+          }
+
+          .no_sale {
+            color: #545454;
           }
 
           .standard_price {
