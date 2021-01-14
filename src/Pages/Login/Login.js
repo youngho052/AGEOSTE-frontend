@@ -22,48 +22,62 @@ class Login extends Component {
     
     return (
       <div className="Login">
-        <div className="LoginContainer">
-          <div className="Logincont">
-            <h1>Login</h1>
-          </div>
-          <div className='IdForm'>
-            <i class="far fa-user" id="IdIcon" />
-            <input 
-              type="text"
-              className="IdInput"
-              placeholder="아이디"
-            />
-          </div>
-          <div className='PwForm'>
-            <i class="fas fa-lock" id="PwIcon"/>
-            <input
-              className="PwInput"
-              type={hiddenPw ? "password" : "text"}
-              placeholder="비밀번호"
-            /> 
-          </div>
-          <div className="show" onClick={this.showPassword}>
-            <i key={icon}>
-              <span className={icon} />
-            </i>
-          </div>
-          <div className="Remember">
-            <div className="RememberId">
+        <h1>로그인</h1>
+        <div className="LoginContainer"> 
+          <div className="LoginCont">
+            <h1>AGEOSTE 통합회원</h1>
+            <div className="LoginForm">
+              <label>
+                <i className="far fa-user" id="idIcon"/>
+              </label>
               <input 
-                type="checkbox" 
+                type="text"
+                className="idInput input__padding"
+                placeholder="아이디"
               />
-              <span>Remember ID</span>
             </div>
-            <div className="ForgetPw">
-              <Link to='/'><span>Forget Password?</span></Link>
+            <div className="PwForm">
+              <label className="pwIcon">
+                <i className="fas fa-lock" id="pwIcon"/>
+              </label>
+              <input 
+                type={hiddenPw ? "password" : "text"}
+                className="pwInput input__padding"
+                placeholder="비밀번호"
+              />
+              <label className="show" onClick={this.showPassword}>
+                <i key={icon}>
+                  <span className={icon} />
+                </i>
+              </label>
+            </div>
+            <div className="Remember">
+              <div className="RememberId">
+                <input 
+                  type="checkbox" 
+                />
+                <span>아이디저장</span>
+              </div>
+              <div className="ForgetPw">
+                <Link to='/'><span>비밀번호를 잊으셨나요?</span></Link>
+              </div>
+            </div>
+            <div className="LoginButton">
+              <button>로그인</button>
             </div>
           </div>
-          <div className="LoginButton">
-            <button>Login</button>
-          </div>
-          <div className="SignUp">
-            <h1>OR</h1>
-            <Link to='/'><p>Sign up</p></Link>
+          <div className="SignupCont">
+            <div className="SignupForm">
+              <h1>아직 AGEOSTE 회원이 아니신가요?</h1>
+              <div className="benifit">
+                <span>지금 AGEOSTE에 회원가입하시면</span>
+                <span>다양한 멤버쉽 혜택을 누리실 수 있습니다.</span>
+              </div>
+              <img src="images/Membership.png" className="Logo" alt="아거스테 로고" />
+              <div className="SignupBtn">
+                <Link to='/signup'><button>회원가입</button></Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>  
