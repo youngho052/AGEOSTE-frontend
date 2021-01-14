@@ -1,32 +1,50 @@
 .Navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 25px;
-  
-  .NavbarMenu {
+  border:1px solid red;
+  .nav {
     display: flex;
     align-items: center;
-    li {
-      margin: 0 15px;
-      a {
-        color: #000;
+    justify-content: space-between;
+    .NavbarMenu {
+      display: flex;
+      align-items: center;
+      li.navMenu {
+        position: relative;
+        margin: 0 15px;
+        cursor: pointer;
+        a {
+          color: #000;
+        }
+        .subMenu{
+          position: absolute;
+          top:50px;
+          width:100%;
+          border:1px solid blue;
+        }
+      }
+
+      li.myPolo a {
+        color: #dd1785;
       }
     }
-    
-    li.myPolo a {
-      color: #dd1785;
+
+    .NavbarUser {
+      display: flex;
+      align-items: center;
+      li {
+        margin: 0 15px;
+        a {
+          color: #000;
+        }
+      }
     }
   }
-  
-  .NavbarUser{
-		display: flex;
-		align-items: center;
-		li{
-			margin:0 15px;
-			a{
-				color:#000;
-			}
-		}
-	}
+}
+.test{
+  padding:25px;
+  position: absolute;
+  top:80px;
+  left:0;
+  width:100%;
+  border:1px solid red;
 }
