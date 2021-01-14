@@ -1,0 +1,18 @@
+[
+  {
+    "tear": "80만원 이상시",
+    "point": "7%",
+    "birth": "3만원",
+    "levelup": "10,000포인트",
+    "image": "images/Gold.png",
+    "name": "GOLD"
+  },
+  {
+    "tear": "200만원 이상시",
+    "point": "7%",
+    "birth": "4만원",
+    "levelup": "20,000포인트",
+    "image": "images/Vip.png",
+    "name": "VIP"
+  }
+]
