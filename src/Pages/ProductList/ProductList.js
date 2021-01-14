@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Item from './Components/Item';
+import Product from './Components/Product';
 import { PRODUCT_DATA } from './data'
-import './Product.scss';
+import './ProductList.scss';
 
-class Product extends Component {
+class ProductList extends Component {
   constructor() {
     super();
     this.state = {
@@ -28,11 +28,15 @@ class Product extends Component {
     const { starNumToArr } = this;
 
     return (
-      <div className="Product">
+      <>
+      <div className="category_title_container">
+        <div className="category_title">남성 스웨터</div>
+      </div>
+      <div className="ProductList">
         {
           productList.map((product, index) => {
             return (
-              <Item
+              <Product
                 key={index}
                 product={product}
                 starNumToArr={starNumToArr}
@@ -41,8 +45,9 @@ class Product extends Component {
           })
         }
       </div>
+      </>
     );
   }
 }
 
-export default Product;
+export default ProductList;
