@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  overflow-x: hidden;
 }
-.d_block{
+.d__block{
   display: block;
+}
+.d__none{
+  display: none;
+}
+.redColor{
+  color:red;
 }

@@ -1,90 +1,30 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import NavbarSubMenu from './NavbarSubMenu';
 class NavbarMenu extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuList: [
-        {
-          id: 1,
-          menuName: 'Men',
-          submenu: [
-            {
-              id: 1,
-              title:"의류",
-              closth:[
-                {
-                  polo:"폴로",
-                  shirts_tops:"셔츠 & 상의",
-                  t_shirts:"티셔츠",
-                  neat:"니트",
-                  neat_sweater:"니트 & 스웨터",
-                  hood_sweatshirt:"후드 & 스웻셔츠",
-                  jacket_coat:"자켓 & 코트",
-                  pants_shorts:"바지 & 반바지",
-                  sportswear:"스포츠웨어",
-                }
-              ],
-              shose:["....."],
-              accessories:["...."],
-              leathergood:["..."]
-            },
-          ],
-        },
-        {
-          id: 2,
-          menuName: 'Women',
-          submenu: [
-            {
-              title: 'bb',
-            },
-          ],
-        },
-        {
-          id: 3,
-          menuName: 'Kids',
-          submenu: [
-            {
-              title: 'cc',
-            },
-          ],
-        },
-      ],
-      submenu: [],
-    };
-  }
-  test = (id) => {
-    const menuList = this.state.menuList;
-    const index = menuList.indexOf(id);
-    const findsub = menuList[index].submenu;
-    this.setState({
-      submenu: findsub,
-    });
+  onFindId = (id) => {
+    this.props.updateSubMenu(id);
   };
-  render() {
-    const { menuList, submenu } = this.state;
 
+  render() {
     return (
-      <>
-        <ul className='NavbarMenu'>
-          {menuList.map((item) => {
+      <div className='NavbarMenu'>
+        <ul className='gnbMenu'>
+          {this.props.onSubMenuList.map((item) => {
             return (
               <li
-                className='navMenu'
                 key={item.id}
-                onClick={() => this.test(item)}>
-                {item.menuName}
+                className={`${
+                  item.menuName === '나의 라코스테 폴로' ? 'hoverNot' : ''
+                } ${item.menuName === 'SALE' ? 'myPolo' : ''}`}
+                onMouseEnter={() => this.onFindId(item.id)}>
+                <Link to='/'>{item.menuName}</Link>
               </li>
             );
           })}
-          <li>
-            <button>
-              <i className='fas fa-search' />
-            </button>
-          </li>
         </ul>
-        <NavbarSubMenu subMenu={submenu} />
-      </>
+        <NavbarSubMenu subMenu={this.props.sendMenuList} />
+      </div>
     );
   }
 }
