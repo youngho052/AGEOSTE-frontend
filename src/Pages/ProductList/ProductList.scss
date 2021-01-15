@@ -6,6 +6,9 @@
   display: none;
 }
 
+$color-white: #ffffff;
+$color-green: #105a33;
+
 .category_title_container {
   display: flex;
   flex-direction: column;
@@ -17,8 +20,8 @@
     position: relative;
     width: 25%;
     height: 80px;
-    background-color: #105a33;
-    color: #ffffff;
+    background-color: $color-green;
+    color: $color-white;
     text-align: center;
     line-height: 80px;
     font-size: 30px;
@@ -30,7 +33,7 @@
       right: 0;
       width: 0;
       height: 0;
-      border-right: 80px solid white;
+      border-right: 80px solid $color-white;
       border-top: 80px solid transparent;
     }
   }
@@ -67,7 +70,7 @@
           bottom: 5px;
           width: 86px;
           height: 28px;
-          background-color: #ffffff;
+          background-color: $color-white;
           font-size: 14px;
           text-align: center;
           line-height: 28px;
@@ -85,7 +88,7 @@
           width: 60px;
           height: 20px;
           margin-bottom: 5px;
-          color: #ffffff;
+          color: $color-white;
           background-color: #4ca2cf;
           border-radius: 5px;
           line-height: 20px;
@@ -116,7 +119,7 @@
 
           li {
             display: inline-block;
-            color: #105a33;
+            color: $color-green;
           }
         }
 

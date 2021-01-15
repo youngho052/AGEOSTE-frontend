@@ -11,7 +11,7 @@ class Product extends Component {
         <div className="product_block">
           <div className="product_img">
             <img src={imgUrl} alt="상품 이미지"/>
-            <div className={ color ? "product_color" : "dpn"}>{`+ ${color} ` + (color === 1 ? 'color' : 'colors')}</div>
+            <div className={ color ? "product_color" : "dpn"}>{`+ ${color} ${color === 1 ? 'color' : 'colors'}`}</div>
           </div>
           <div className="product_info">
             <div className={sale_per ? "sale_per" : "dpn"}>{`${sale_per}% 세일`}</div>
