@@ -15,7 +15,7 @@ class ProductDetail extends Component {
       <>
         <Navbar />
         <div className="ProductDetail">
-          <div className="top_info_block">
+          <div className="top_info_container">
             <div className="img_block_915">
               <img src="http://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dwbb6adebc/BH1966-20D_CY9_20.jpg?imwidth=915&impolicy=product" />
             </div>
@@ -32,6 +32,16 @@ class ProductDetail extends Component {
                 </ul>
                 <button>(1개의 리뷰)</button>
               </div>
+              <div className="color_price_container">
+                <span>색상 정보</span>
+                <div className="price">
+                  <div className="sale_price">377,300 원</div>
+                  <div className="standard_price">539,000 원</div>
+                </div>
+              </div>
+              <div className="card_benefits_container">
+                <button className="card_benefits">카드 혜택 보기</button>
+              </div>
               <div className="size_guide_container">
                 <button className="size_guide"><i class="fas fa-tshirt"></i>사이즈 가이드</button>
               </div>
@@ -43,8 +53,19 @@ class ProductDetail extends Component {
               </div>
             </div>
           </div>
-          <div className="detail_info_block">
-            <div className="detail_info"></div>
+          <div className="detail_info_container">
+            <div className="detail_info">
+              <h2>상세히 보기</h2>
+              <div className="product_code">제품코드. BH1966-20D</div>
+              <p>고급 충전재가 들어가 푹신한 멋스러운 숏 패딩 자켓입니다. 방수 기능이 들어간 가벼운 태피터 소재의 후드 자켓이라 언제든 부담없이 걸치기 좋습니다. 단색 디자인과 3색 배색 디자인 중 원하는 스타일을 선택해보세요.</p>
+              <ul>
+                <li>조임끈과 스토퍼가 있는 후드 지퍼 스탠드업 칼라</li>
+                <li>방수 태피퍼(부드럽고 아주 가벼우며 약간 반짝거리는 마감의 패브릭)</li>
+                <li>사이드 포켓과 안쪽의 가슴포켓</li>
+                <li>지퍼 여밈과 하단부의 조절가능한 조임끈과 스토퍼</li>
+                <li>가슴의 그린 크록자수</li>
+              </ul>
+            </div>
             <div className="img_block_915">
               <img src="http://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dwcfbce51f/BH1966-20D_CY9_21.jpg?imwidth=915&impolicy=product" />
             </div>

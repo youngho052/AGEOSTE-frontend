@@ -5,7 +5,7 @@
 .ProductDetail {
   margin-top: 60px;
 
-  .top_info_block {
+  .top_info_container {
     display: flex;
     height: 915px;
     margin-bottom: 76px;
@@ -63,9 +63,53 @@
           font-size: 11px;
           margin-left: 5px;
           color: #767676;
+          text-decoration: underline;
 
           &:hover {
-            text-decoration: underline;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .color_price_container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        span {
+        }
+
+        .price {
+          margin-bottom: 10px;
+
+          .sale_price {
+            font-size: 17px;
+            font-weight: bold;
+            color: #4ca2cf;
+          }
+
+          .standard_price {
+            text-align: end;
+            font-size: 13px;
+            color: #767676;
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .card_benefits_container {
+        display: flex;
+        justify-content: flex-end;
+
+        .card_benefits {
+          font-size: 15px;
+          color: #767676;
+          margin-bottom: 50px;
+          text-align: end;
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
           }
         }
       }
@@ -73,15 +117,15 @@
       .size_guide_container {
         display: flex;
         justify-content: flex-end;
-        margin-bottom: 10px;
-        margin-right: 20px;
+        margin-bottom: 20px;
 
         button {
           color: #767676;
           font-size: 13px;
+          text-decoration: underline;
 
           &:hover {
-            text-decoration: underline;
+            text-decoration: none;
           }
 
           svg {
@@ -139,7 +183,7 @@
     }
   }
 
-  .detail_info_block {
+  .detail_info_container {
     display: flex;
     justify-content: space-between;
     height: 915px;
@@ -149,7 +193,27 @@
       width: 685px;
       height: 100%;
       margin-left: 76px;
-      border: 1px solid black;
+      color: #545454;
+
+      h2 {
+        color: #292929;
+        font-size: 18px;
+      }
+
+      .product_code {
+        font-size: 10px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      li::before {
+        content: "\-";
+        margin: 0 0.25rem 0 0.5rem;
+      }
     }
 
     .img_block_915 {
