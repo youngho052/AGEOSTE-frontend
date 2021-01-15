@@ -1,16 +1,66 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { SERVER, SERVER_SIGNUP } from '../../Components/Config'
 import './Signup.scss';
 
 class Signup extends Component{
   constructor(){
     super();
     this.state = {
+      id: "",
+      password: "",
+      username: "",
+      phone: "",
+      birth: "",
       allChecked: false,
       FirstCheck: false,
       SecondCheck: false,
       ThirdCheck: false,
     };
+  }
+
+  Nameinput = (e) => {
+    this.setState({ username : e.target.value})
+  }
+
+  Idinput = (e) => {
+    this.setState({ id : e.target.value});
+
+    // const { id } = this.state;
+    // if(!id.includes('@')){
+    //   alert("이메일 형식이 맞지 않습니다.")
+    // }
+    
+  }
+
+  Pwinput = (e) => {
+    this.setState({ password : e.target.value});
+  }
+
+  Phoneinput = (e) => {
+    this.setState({ phone : e.target.value});
+  }
+
+  Birthinput = (e) => {
+    this.setState({ birth : e.target.value});
+  }
+
+  checkId = (e) => {
+    const { id, username, password, phone} = this.state;
+
+    fetch(SERVER_SIGNUP, {
+      method: "POST",
+      body: JSON.stringify({
+        name: username,
+        email: id,
+        password: password,
+        phone_number: phone,
+      })
+    })
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+      })
   }
 
   handleAllCheck = () =>{
@@ -74,67 +124,89 @@ class Signup extends Component{
 
   render(){
     const { allChecked, FirstCheck, SecondCheck, ThirdCheck } = this.state;
+    const {id, password, phone, username, birth} = this.state;
 
+    const checkPw = password.length > 8;
+
+    console.log(id, password, phone, username);
     return(
       <div className="Signup">
         <div className="SignupContainer">
-          <h1>회원가입</h1>
-          <div className="Name">
-            <span>이름 *</span>
+        <h1>회원가입</h1>
+          <div className="Name Form">
+            <div className="nameForm SignForm">
+              <span>이름 *</span>
+            </div>
             <input
               className="NameInput input__padding" 
               type="text"
               placeholder="이름"
+              onChange={this.Nameinput}
             />
           </div>
-          <div className="Id">
-            <span>아이디 *</span>
+          <div className="Id Form">
+            <div className="idForm SignForm">
+              <span>아이디 *</span>
+            </div>
             <input 
               className="IdInput input__padding"
               type="text"
-              placeholder="아이디(이메일)" 
+              placeholder="아이디(이메일)"
+              onChange={this.Idinput}
             />
-            <button type="submit">중복확인</button>
+            <button 
+              type="submit"
+            >
+              중복확인
+            </button>
           </div>
-          <div className="Pw">
-            <span>비밀번호 *</span>
+          <div className="Pw Form">
+            <div className="pwForm SignForm">
+              <span>비밀번호 *</span>
+            </div>
             <input 
               className="PwInput input__padding"
               type="password" 
               placeholder="비밀번호"
+              onChange={this.Pwinput}
             />
+            <p>{(!checkPw) ? 'b' : 'a' }</p>
           </div>
-          <div className="PwModify">
-            <p>* 비밀번호는 8자 이상이며/문자/숫자/특수문자가 포함되어야 합니다.</p>
-            <p>* 아이디와 동일한 비밀번호는 사용할 수 없습니다.</p>
-          </div>
-          <div className="CheckPw">
-            <span>비밀번호 확인*</span>
+          <div className="CheckPw Form">
+            <div className="pwForm SignForm">
+              <span>비밀번호 확인*</span>
+            </div>
             <input 
               className="PwInput input__padding"
               type="password" 
               placeholder="비밀번호 확인"
             />
           </div>
-          <div className="Phone">
-            <span>휴대폰 번호*</span>
+          <div className="Phone Form">
+            <div className="phoneForm SignForm">
+              <span>휴대폰 번호*</span>
+            </div>
             <input 
               className="PhoneInput input__padding"
               type="text" 
               placeholder="-제외 숫자만 입력(11자리)"
+              onChange={this.Phoneinput}
             />
             <button type="submit">인증번호 전송</button>
           </div>
-          <div className="Birth">
-            <span>생년월일</span>
+          <div className="Birth Form">
+            <div className="birthForm SignForm"> 
+              <span>생년월일</span>
+            </div>
             <input 
               className="BirthInput input__padding" 
               type="text"
               placeholder="숫자만 입력(8자리)"
+              onChange={this.Birthinput}
             />
           </div>
           <div className="Agree">
-            <h1>약관 동의</h1>
+            <h2>약관 동의</h2>
             <div className="AgreeCheck">
               <input 
                 type="checkbox" 
@@ -171,7 +243,13 @@ class Signup extends Component{
           </div>
           <div className="Success">
             <Link to="/login"><button className="Cancle">취소</button></Link>
-            <Link to="/main"><button className="Sign">회원가입</button></Link>
+            <Link to="/main">
+              <button 
+                className="Sign"
+                onClick={this.checkId}
+              >
+                회원가입
+              </button></Link>
           </div>
         </div>
       </div>
