@@ -9,13 +9,13 @@
     font-size: 25px;
   }
 
-  .LoginContainer {
+  .loginContainer {
     display: flex;
     justify-content: space-between;
     width: 1000px;
     margin-top: 50px;
 
-    .LoginCont {
+    .loginCont {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,7 +30,7 @@
         font-size: 26px;
       }
 
-      .LoginForm {
+      .loginForm {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -58,7 +58,7 @@
         }
       }
 
-      .PwForm {
+      .pwForm {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -103,19 +103,19 @@
         width: 420px;
         margin-top: 30px;
 
-        .RememberId {
+        .rememberId {
           display: flex;
           align-items: center;
         }
 
-        .ForgetPw {
+        .forgetPw {
           span {
             color: #4317fc;
           }
         }
       }
 
-      .LoginButton {
+      .loginButton {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -136,13 +136,13 @@
       }
     }
 
-    .SignupCont {
+    .signupCont {
       display: flex;
       width: 490px;
       height: 500px;
       border: 1px solid #000;
 
-      .SignupForm {
+      .signupForm {
         display: flex;
         flex-direction: column;
         align-items: center;
