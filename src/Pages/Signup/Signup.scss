@@ -17,6 +17,7 @@
     height: 75px;
     border-top: 1px solid #000;
   }
+
   .SignForm {
     display: flex;
     align-items: center;
@@ -35,11 +36,41 @@
     margin-top: 20px;
 
     .Name,
+    .Id,
     .Pw,
     .CheckPw,
     .Birth {
-      .NameInput,
-      .PwInput,
+      .effective {
+        span {
+          display: none;
+        }
+
+        &.success {
+          input {
+            height: 16px;
+          }
+
+          span {
+            display: block;
+            font-size: 12px;
+            margin: 5px 0 0 0;
+            margin-left: 25px;
+
+            &.complete {
+              color: blue;
+            }
+
+            &.fail {
+              color: red;
+            }
+          }
+        }
+      }
+
+      .nameInput,
+      .idInput,
+      .pwInput,
+      .againpwInput,
       .BirthInput {
         width: 450px;
         height: 26px;
@@ -54,30 +85,35 @@
       border-bottom: 1px solid #000;
     }
 
-    .Id {
-      .IdInput {
-        width: 330px;
-        height: 25px;
-        margin-left: 20px;
-        border: 1px solid rgb(218, 217, 217);
-        border-radius: 5px;
-        outline: none;
-      }
-
-      button {
-        width: 100px;
-        height: 40px;
-        margin-left: 20px;
-        background-color: #fff;
-        border: 1px solid #000;
-        border-radius: 5px;
-        outline: none;
-        cursor: pointer;
-      }
-    }
-
     .Phone {
-      .PhoneInput {
+      .effective {
+        span {
+          display: none;
+        }
+
+        &.success {
+          input {
+            height: 16px;
+          }
+
+          span {
+            display: block;
+            font-size: 12px;
+            margin: 5px 0 0 0;
+            margin-left: 25px;
+
+            &.complete {
+              color: blue;
+            }
+
+            &.fail {
+              color: red;
+            }
+          }
+        }
+      }
+
+      .phoneInput {
         width: 330px;
         height: 25px;
         margin-left: 20px;
@@ -112,7 +148,7 @@
         text-align: center;
       }
 
-      .AgreeCheck {
+      .agreeCheck {
         display: flex;
         align-items: center;
         margin: 0 0 20px 100px;
