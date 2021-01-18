@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { SERVER_SIGNUP } from '../../Data/Config';
+import { SERVER_SIGNUP } from './Data/Config';
 import './Signup.scss';
 
 class Signup extends Component{
@@ -44,7 +44,7 @@ class Signup extends Component{
     this.setState({ birth : e.target.value});
   }
 
-  checkId = (e) => {
+  SignupId = (e) => {
     const { id, username, password, phone, birth} = this.state;
 
     fetch(SERVER_SIGNUP, {
@@ -278,7 +278,7 @@ class Signup extends Component{
             <Link to="/login"><button className="Cancle">취소</button></Link>
               <button 
                 className="Sign"
-                onClick={this.checkId}
+                onClick={this.SignupId}
               >
                 회원가입
               </button>
