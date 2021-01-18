@@ -14,9 +14,8 @@ class Signup extends Component{
       phone: "",
       birth: "",
       allChecked: false,
-      FirstCheck: false,
-      SecondCheck: false,
-      ThirdCheck: false,
+      name: "",
+      check: false,
     };
   }
 
@@ -60,7 +59,16 @@ class Signup extends Component{
       .then(res => res.json())
       .then(result => {
         console.log(result);
-        
+
+        if(result.error === "EXIST_EMAIL") {
+          alert('중복된 이메일 입니다.')
+          return;
+        }
+
+        if(result.error === "EXIST_PHONE_NUMBER") {
+          alert('사용중인 휴대폰 번호입니다.')
+          return;
+        }
         if(result.message === "SUCCESS") {
           alert('회원가입 성공!')
           this.props.history.push('./main')
@@ -72,48 +80,65 @@ class Signup extends Component{
     const { allChecked }= this.state;
     if(allChecked === true){
       this.setState({
-        FirstCheck: false,
-        SecondCheck: false,
-        ThirdCheck: false,
+        // firstChecked: false,
+        // secondChecked: false,
+        // thirdChecked: false,
+        check: false,
         allChecked: false,
       });
     } else {
       this.setState({
-        FirstCheck: true,
-        SecondCheck: true,
-        ThirdCheck: true,
+        // firstChecked: true,
+        // secondChecked: true,
+        // thirdChecked: true,
+        check: true,
         allChecked: true,
       });
     }  
   };
 
-  FirsthandleCheck = () => {
-    this.setState({
-      FirstCheck: !this.state.FirstCheck,
-    });
-  };
-  SecondhandleCheck = () => {
-    this.setState({
-      SecondCheck: !this.state.SecondCheck,
-    });
-  };
-  ThirdhandleCheck = () => {
-    this.setState({
-      ThirdCheck: !this.state.ThirdCheck,
-    });
-  };
+  handleCheck = e => {
+    
+    const { id } = e.target;
+    if(id ==="firstCheck"){
+      this.setState({check: !this.state.check});
+      return;
+    }
+    
+    // this.setState({
+    //   check: !this.state.check
+    // })
+    // console.log(name === 'firstCheck', checked);
+  }
+
+ 
+  // FirsthandleCheck = () => {
+  //   this.setState({
+  //     FirstCheck: !this.state.FirstCheck,
+  //   });
+  // };
+  // SecondhandleCheck = () => {
+  //   this.setState({
+  //     SecondCheck: !this.state.SecondCheck,
+  //   });
+  // };
+  // ThirdhandleCheck = () => {
+  //   this.setState({
+  //     ThirdCheck: !this.state.ThirdCheck,
+  //   });
+  // };
 
   componentDidUpdate(prevProps, prevState) {
-    const { FirstCheck, SecondCheck, ThirdCheck } = this.state;
+    const { firstCheck, secondCheck, thirdCheck } = this.state;
     let prevtruecnt = 0,
         curtruecnt = 0;
-    if (prevState.FirstCheck) prevtruecnt++;
-    if (prevState.SecondCheck) prevtruecnt++;
-    if (prevState.ThirdCheck) prevtruecnt++;
+    if (prevState.firstCheck) prevtruecnt++;
+    if (prevState.secondCheck) prevtruecnt++;
+    if (prevState.thirdCheck) prevtruecnt++;
 
-    if (FirstCheck) curtruecnt++;
-    if (SecondCheck) curtruecnt++;
-    if (ThirdCheck) curtruecnt++;
+    if (firstCheck) curtruecnt++;
+    if (secondCheck) curtruecnt++;
+    if (thirdCheck) curtruecnt++;
 
     if (prevtruecnt < 3 && curtruecnt === 3) {
       this.setState({
@@ -126,12 +151,12 @@ class Signup extends Component{
       });
     }
   }
-
+  
   render(){
-    const { allChecked, FirstCheck, SecondCheck, ThirdCheck } = this.state;
+    const { allChecked, check } = this.state;
     
     const {id, password, phone, username, birth, againpw} = this.state;
-    
+   
     //유효성 검사
     const checkPw = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/.test(password);
     const checkrePw = password === againpw;
@@ -167,7 +192,7 @@ class Signup extends Component{
                 onChange={this.Idinput}
               />
               <span className={checkEmail ? "complete" : "fail"}>
-                {checkEmail ? "사용가능한 이메일입니다." : "맞지않는 이메일형식 입니다."}
+                {checkEmail ? "사용가능한 이메일형식 입니다." : "잘못된 이메일형식 입니다."}
               </span>
             </div>
           </div>
@@ -217,7 +242,7 @@ class Signup extends Component{
                 onChange={this.Phoneinput}
               />
               <span className={checkPhone ? "complete" : "fail"}>
-                {checkPhone ? "맞는 형식입니다." : "맞지 않는 형식입니다"}
+                {checkPhone ? "맞는 전화번호 형식입니다." : "맞지 않는 전화번호 형식입니다"}
               </span>
             </div>
             <button type="submit">인증번호 전송</button>
@@ -251,25 +276,28 @@ class Signup extends Component{
             </div>
             <div className="AgreeSubCheck">
               <input 
+                id="firstCheck"
                 type="checkbox"
-                checked={FirstCheck}
-                onChange={this.FirsthandleCheck}
+                checked={check}
+                onChange={this.handleCheck}
               />
               <p>아거스테 서비스 이용약관(필수)</p>
             </div>
             <div className="AgreeSubCheck">
               <input 
+                id="secondCheck"
                 type="checkbox"
-                checked={SecondCheck}
-                onChange={this.SecondhandleCheck}
+                checked={check}
+                onChange={this.handleCheck}
               />
               <p>개인정보 수집 동의(필수)</p>
             </div>
             <div className="AgreeSubCheck">
               <input 
+                id="thirdCheck"  
                 type="checkbox"
-                checked={ThirdCheck}
-                onChange={this.ThirdhandleCheck}
+                checked={check}
+                onChange={this.handleCheck}
               />
               <p>SMS를 통한 상품 및 이벤트 정보 수신에 동의합니다.(선택)</p>
             </div>
