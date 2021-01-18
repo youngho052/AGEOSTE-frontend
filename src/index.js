@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Routes from './Routes';
 import './Styles/common.scss';
 import './Styles/reset.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
-
-import Routes from './Routes';
-import './Styles/reset.scss';
-import './Styles/common.scss';
-import '@fortawesome/fontawesome-free/js/all';
 
 ReactDOM.render(
   <React.StrictMode>
