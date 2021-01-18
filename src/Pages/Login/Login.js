@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { SIGN_IN} from './Data/config'
-
+import { SIGN_IN} from './Data/config';
 import './Login.scss';
-import '../../Styles/reset.scss';
 
 class Login extends Component {
   constructor() {
@@ -11,12 +9,12 @@ class Login extends Component {
     this.state = {
       id:"",
       password:"",
-      hiddenPw: true
+      showPw: true
     }
   }
 
   CheckPassword = () => {
-    this.setState({hiddenPw : !this.state.hiddenPw});
+    this.setState({showPw : !this.state.showPw});
   }
 
   LoginInput = e => {
@@ -56,9 +54,8 @@ class Login extends Component {
   }
 
   render() {
-    const {id, password, hiddenPw} = this.state;
-    const icon = hiddenPw ? "fas fa-eye-slash" : "fas fa-eye";
-    console.log({id, password})
+    const {id, password, showPw} = this.state;
+    const icon = showPw ? "fas fa-eye-slash" : "fas fa-eye";
 
     return (
       <div className="Login">
@@ -68,7 +65,7 @@ class Login extends Component {
             <h1>AGEOSTE 통합회원</h1>
             <div className="loginForm">
               <label>
-                <i className="far fa-user" id="idIcon"/>
+                <i className="idIcon far fa-user"/>
               </label>
               <input 
                 id="id"
@@ -80,12 +77,12 @@ class Login extends Component {
               />
             </div>
             <div className="pwForm">
-              <label className="pwIcon">
-                <i className="fas fa-lock" id="pwIcon"/>
+              <label>
+                <i className="pwIcon fas fa-lock"/>
               </label>
               <input 
                 id="password"
-                type={hiddenPw ? "password" : "text"}
+                type={showPw ? "password" : "text"}
                 className="pwInput input__padding"
                 placeholder="비밀번호"
                 value={password}
@@ -97,7 +94,7 @@ class Login extends Component {
                 </i>
               </label>
             </div>
-            <div className="Remember">
+            <div className="remember">
               <div className="rememberId">
                 <input 
                   type="checkbox" 
