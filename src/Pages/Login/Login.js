@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { SIGN_IN} from './Data/config'
 
 import './Login.scss';
 import '../../Styles/reset.scss';
@@ -8,6 +9,8 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
+      id:"",
+      password:"",
       hiddenPw: true
     }
   }
@@ -16,10 +19,47 @@ class Login extends Component {
     this.setState({hiddenPw : !this.state.hiddenPw});
   }
 
-  render() {
-    const {hiddenPw} = this.state;
-    const icon = hiddenPw ? "fas fa-eye-slash" : "fas fa-eye";
+  LoginInput = e => {
+    const { id, value } = e.target;
     
+    this.setState({ [id] : value})
+  }
+
+  LoginButton = () => {
+    const { id, password} = this.state;
+
+    fetch(SIGN_IN,{
+      method: "POST",
+      body: JSON.stringify({
+        email: id,
+        password: password,
+      })
+    })
+      .then(res => res.json())
+      .then(result => {
+        localStorage.setItem("token", result.Authorization);
+        console.log(result);
+        if(result.error === "INVALID_EMAIL"){
+          alert("아이디가 잘못 입력 됬습니다.");
+          return;
+        }
+        if(result.error === "INVALID_PASSWORD"){
+          alert("비밀번호를 잘못 입력 하셨습니다.");
+          return;
+        }
+        if(result.message === "SUCCESS") {
+          alert("로그인 성공!");
+          this.props.history.push('/main');
+
+        }
+      })
+  }
+
+  render() {
+    const {id, password, hiddenPw} = this.state;
+    const icon = hiddenPw ? "fas fa-eye-slash" : "fas fa-eye";
+    console.log({id, password})
+
     return (
       <div className="Login">
         <h1>로그인</h1>
@@ -31,9 +71,12 @@ class Login extends Component {
                 <i className="far fa-user" id="idIcon"/>
               </label>
               <input 
+                id="id"
                 type="text"
                 className="idInput input__padding"
                 placeholder="아이디"
+                value={id}
+                onChange={this.LoginInput}
               />
             </div>
             <div className="pwForm">
@@ -41,9 +84,12 @@ class Login extends Component {
                 <i className="fas fa-lock" id="pwIcon"/>
               </label>
               <input 
+                id="password"
                 type={hiddenPw ? "password" : "text"}
                 className="pwInput input__padding"
                 placeholder="비밀번호"
+                value={password}
+                onChange={this.LoginInput}
               />
               <label className="show" onClick={this.CheckPassword}>
                 <i key={icon}>
@@ -63,7 +109,12 @@ class Login extends Component {
               </div>
             </div>
             <div className="loginButton">
-              <button>로그인</button>
+              <button
+                type="submit"
+                onClick={this.LoginButton}
+              >
+                로그인
+              </button>
             </div>
           </div>
           <div className="signupCont">

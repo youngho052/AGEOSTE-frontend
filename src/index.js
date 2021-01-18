@@ -6,8 +6,7 @@ import '../src/Styles/reset.scss';
 import '../src/Styles/common.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Routes />
-  </React.StrictMode>,
+  
+  <Routes />,
   document.getElementById('root')
 );
