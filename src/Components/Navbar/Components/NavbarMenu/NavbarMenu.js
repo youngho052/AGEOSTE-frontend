@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import NavbarSubMenu from './NavbarSubMenu';
+import '../NavbarMenu/NavbarMenu.scss';
 class NavbarMenu extends Component {
   onFindId = (id) => {
     this.props.updateSubMenu(id);
   };
 
   render() {
+    const { onSubMenuList } = this.props;
     return (
       <div className='NavbarMenu'>
         <ul className='gnbMenu'>
-          {this.props.onSubMenuList.map((item) => {
+          {onSubMenuList.map((item) => {
             return (
               <li
                 key={item.id}
