@@ -1,0 +1,41 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+class CollectionSlider extends Component {
+  render() {
+    const settings = {
+      infinite: false,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+    };
+    console.log(this.props.data);
+
+    return (
+      <div className='CollectionSlider'>
+        
+        <Slider {...settings}>
+          {this.props.data.map((item) => {
+            return (
+              <div className='card' key={item.id}>
+                <img src={item.imgUrl} />
+                <h3>
+                  <Link to='/'>
+                    {item.linkTitle} <i class='fas fa-long-arrow-alt-right'></i>
+                  </Link>
+                </h3>
+              </div>
+            );
+          })}
+          <div></div>
+          <div></div>
+        </Slider>
+      </div>
+    );
+  }
+}
+
+export default CollectionSlider;
