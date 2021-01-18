@@ -3,8 +3,11 @@ import Navbar from '../../Components/Navbar/Navbar';
 import { PROMOTION, SEASON_OFF } from './data/MainData';
 import MainPromotions from './Components/MainPromotions';
 
-import './Main.scss';
 import CollectionSlider from '../../Components/CollectionSlider/CollectionSlider';
+import WearCollection from '../../Components/WearCollection/WearCollection';
+import MainSalesList from './Components/MainSalesList';
+import './Main.scss';
+
 class Main extends Component {
   render() {
     return (
@@ -35,11 +38,12 @@ class Main extends Component {
             <CollectionSlider data={SEASON_OFF} />
           </section>
           <section className='sportsWear'>
-            <img
-              src='https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw549cc0ae/2020/FW20/Modular_V3/poloshop-new/StrateStory-Desk_cosy.jpg?imwidth=1065&impolicy=custom'
-              alt='아고스테 후드 스웻셔츠 트레이닝 팬츠와 함께하는 집곡생활'
-            />
-            <p>후드, 스웻셔츠, 트레이닝 팬츠와 함께하는 집콕생활</p>
+            <h2 hidden>스포츠 웨어 , 스윗 팬츠, 후디</h2>
+            <WearCollection />
+          </section>
+          <section className='seasonCollection'>
+            <h2>The AGEOSTE World</h2>
+            <MainSalesList />
           </section>
           <div>1</div>
           <div>2</div>

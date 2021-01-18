@@ -12,11 +12,9 @@ class CollectionSlider extends Component {
       slidesToShow: 4,
       slidesToScroll: 2,
     };
-    console.log(this.props.data);
 
     return (
       <div className='CollectionSlider'>
-        
         <Slider {...settings}>
           {this.props.data.map((item) => {
             return (
@@ -24,7 +22,8 @@ class CollectionSlider extends Component {
                 <img src={item.imgUrl} />
                 <h3>
                   <Link to='/'>
-                    {item.linkTitle} <i class='fas fa-long-arrow-alt-right'></i>
+                    {item.linkTitle}{' '}
+                    <i className='fas fa-long-arrow-alt-right'></i>
                   </Link>
                 </h3>
               </div>
