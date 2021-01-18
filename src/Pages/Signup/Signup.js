@@ -124,6 +124,7 @@ class Signup extends Component{
     const { allChecked, firstCheck, secondCheck, thirdCheck } = this.state;
     
     const {id, password, phone, username, birth, againpw} = this.state;
+    
     //유효성 검사
     const checkPw = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/.test(password);
     const checkrePw = password === againpw;
@@ -134,10 +135,10 @@ class Signup extends Component{
     console.log({username, id, password, againpw, phone, birth});
     return(
       <div className="Signup">
-        <div className="SignupContainer">
+        <div className="signupContainer">
         <h1>회원가입</h1>
           <div className="Name Form">
-            <div className="nameForm SignForm">
+            <div className="signForm">
               <span>이름 *</span>
             </div>
             <input
@@ -149,10 +150,10 @@ class Signup extends Component{
             />
           </div>
           <div className="Id Form">
-            <div className="idForm SignForm">
+            <div className="signForm">
               <span>아이디 *</span>
             </div>
-            <div className={`effective ${id && "success"}`}>
+            <div className={`effective ${id && "sign"}`}>
               <input 
                 id="id"
                 className="idInput input__padding"
@@ -166,10 +167,10 @@ class Signup extends Component{
             </div>
           </div>
           <div className="Pw Form">
-            <div className="pwForm SignForm">
+            <div className="signForm">
               <span>비밀번호 *</span>
             </div>
-            <div className={`effective ${password && "success"}`}>
+            <div className={`effective ${password && "sign"}`}>
               <input 
                 id="password"
                 className="pwInput input__padding"
@@ -185,10 +186,10 @@ class Signup extends Component{
             </div>
           </div>
           <div className="CheckPw Form">
-            <div className="pwForm SignForm">
+            <div className="signForm">
               <span>비밀번호 확인*</span>
             </div>
-            <div className={`effective ${againpw && "success"}`}>
+            <div className={`effective ${againpw && "sign"}`}>
               <input 
                 id="againpw"
                 className="againpwInput input__padding"
@@ -202,10 +203,10 @@ class Signup extends Component{
             </div>
           </div>
           <div className="Phone Form">
-            <div className="phoneForm SignForm">
+            <div className="signForm">
               <span>휴대폰 번호*</span>
             </div>
-            <div className={`effective ${phone && "success"}`}>
+            <div className={`effective ${phone && "sign"}`}>
               <input
                 id="phone"
                 className="phoneInput input__padding"
@@ -220,10 +221,10 @@ class Signup extends Component{
             <button type="submit">인증번호 전송</button>
           </div>
           <div className="Birth Form">
-            <div className="birthForm SignForm"> 
+            <div className="signForm"> 
               <span>생년월일</span>
             </div>
-            <div className={`effective ${birth && "success"}`}>
+            <div className={`effective ${birth && "sign"}`}>
               <input
                 id="birth"
                 className="BirthInput input__padding" 
@@ -247,7 +248,7 @@ class Signup extends Component{
               />
               <p>아거스테 회원가입 약관 모두동의</p>
             </div>
-            <div className="AgreeSubCheck">
+            <div className="agreesubCheck">
               <input 
                 name="firstCheck"
                 type="checkbox"
@@ -256,7 +257,7 @@ class Signup extends Component{
               />
               <p>아거스테 서비스 이용약관(필수)</p>
             </div>
-            <div className="AgreeSubCheck">
+            <div className="agreesubCheck">
               <input 
                 name="secondCheck"
                 type="checkbox"
@@ -265,7 +266,7 @@ class Signup extends Component{
               />
               <p>개인정보 수집 동의(필수)</p>
             </div>
-            <div className="AgreeSubCheck">
+            <div className="agreesubCheck">
               <input 
                 name="thirdCheck"  
                 type="checkbox"
@@ -275,10 +276,10 @@ class Signup extends Component{
               <p>SMS를 통한 상품 및 이벤트 정보 수신에 동의합니다.(선택)</p>
             </div>
           </div>
-          <div className="Success">
-            <Link to="/login"><button className="Cancle">취소</button></Link>
+          <div className="success">
+            <Link to="/login"><button className="cancle">취소</button></Link>
               <button 
-                className="Sign"
+                className="sign"
                 onClick={this.signupId}
               >
                 회원가입
