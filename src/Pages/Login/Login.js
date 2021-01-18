@@ -37,7 +37,7 @@ class Login extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        localStorage.setItem("token", result.Authorization);
+        localStorage.setItem("token", result.token);
         console.log(result);
         if(result.error === "INVALID_EMAIL"){
           alert("아이디가 잘못 입력 됬습니다.");
