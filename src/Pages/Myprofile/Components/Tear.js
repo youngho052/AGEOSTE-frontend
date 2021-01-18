@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './Tear.scss'
 
 class Tear extends Component {
   constructor(props){
-    super(props)
+    super()
 
   }
 
   render() {
-    const {key, image, name, point, birth, level, grades} = this.props;
+    const {image, name, point, birth, level, grades} = this.props;
     return (
-      <div className="TearName" key={key}>
-        <div className="Member">
+      <div className="Tear">
+        <div className="member">
           <img src={image} alt="티어별 이미지" />
           <p>{name}</p>
           <span>자격요건: {grades}</span>

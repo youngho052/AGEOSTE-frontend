@@ -1,0 +1,53 @@
+.Mytear {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 347px;
+  height: 500px;
+  margin-top: 20px;
+  background-color: #384a6b;
+
+  .NowTear {
+    font-size: 18px;
+    color: #fff;
+    padding: 35px;
+  }
+
+  img {
+    width: 70px;
+  }
+
+  .Silver {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 35px;
+    color: yellow;
+  }
+
+  .benefit {
+    font-size: 13px;
+    color: yellow;
+  }
+
+  .Score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 60px;
+    height: 165px;
+    background-color: #244381;
+
+    .Mileage {
+      margin-top: 30px;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .Look {
+      margin-top: 50px;
+      font-size: 13px;
+      color: yellow;
+    }
+  }
+}

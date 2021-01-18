@@ -4,7 +4,7 @@ import Tear from './Components/Tear';
 import Mytear from './Components/Mytear';
 import './Myprofile.scss';
 
-const NavCotent = [
+const NAV_CONTENT = [
   {id: 0, name:'내 프로필'},
   {id: 1, name:'맴버십혜택'},
   {id: 2, name:'주문/배송조희'},
@@ -12,7 +12,7 @@ const NavCotent = [
   {id: 4, name:'고객센터'},
 ]
 
-const Information = [
+const INFORMATION = [
   {name: "내 라코스테 부티크", content: "자주 찾는 부티크를 추가해주세요", link: "+부티크 추가하기"},
   {name: "주소록", content: "알려진 주소가 없습니다", link: "+새로운 주소 추가하기"},
 ]
@@ -22,54 +22,45 @@ class Myprofile extends Component {
     super()
     this.state = {
       gradeList: [],
-      UserList: [],
+      userList: [],
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/data.json', {})
+    fetch('/data/data.json')
       .then(response => response.json())
-      .then(data => {
-        this.setState({
-          gradeList : data,
-        })
-      })
+      .then(gradeList => this.setState({gradeList}))
 
-    fetch('http://localhost:3000/data/UserData.json', {})
+    fetch('/data/userData.json')
       .then(response => response.json())
-      .then(result => {
-        this.setState({
-          UserList : result,
-        })
-      })
+      .then(userList => this.setState({userList}))
   }
 
   render() {
-    const { gradeList, UserList } = this.state;
+    const { gradeList, userList } = this.state;
     
     return (
       <div className="Myprofile">
-        <div className="Profile">
+        <div className="profile">
           <div className="intro">
-            <div className="Welcome">
+            <div className="welcome">
               <p><span>안녕하세요 {}</span> 님 마이페이지에 오신 것을 환영합니다.</p>
             </div>
             <div className="logo">
               <img src="images/logo.png" alt="아거스테 로고" />
             </div>
           </div>
-          <div className="Navbar">
-            <ul className="Nav">
-              {NavCotent.map((el, index) => {
+          <div className="navBar">
+            <ul className="nav">
+              {NAV_CONTENT.map((el, index) => {
                 return(
-                  <li className="Menu" key={index}>{el.name}</li>
+                  <li className="menu" key={index}>{el.name}</li>
                 )
               })}
             </ul>
           </div>
           <div className="Membership">
             <Mytear />
-            <div className="Tear">
               {gradeList.map((grade, index) =>{
                 return(
                   <Tear 
@@ -83,11 +74,10 @@ class Myprofile extends Component {
                   />
                 )
               })}
-            </div>
           </div>
-          <div className="InfoCont">
-            <div className="UserInfo">
-              {UserList.map((user, index) => {
+          <div className="infoCont">
+            <div className="userInfo">
+              {userList.map((user, index) => {
                 return(
                   <>
                     <ul key={index}>
@@ -103,10 +93,10 @@ class Myprofile extends Component {
                 )
               })}
             </div>
-            <div className="SecondCont">
-              {Information.map((info, index) => {
+            <div className="secondCont">
+              {INFORMATION.map((info, index) => {
                 return (
-                  <div className="Cont">
+                  <div className="cont">
                     <h1>{info.name}</h1>
                     <span>{info.content}</span>
                     <Link className="link" to='/'>{info.link}</Link>
