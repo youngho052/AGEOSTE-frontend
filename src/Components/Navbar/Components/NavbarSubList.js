@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-class test extends Component {
+
+class NavbarSubList extends Component {
   render() {
     return (
       <>
@@ -16,4 +17,4 @@ class test extends Component {
   }
 }
 
-export default test;
+export default NavbarSubList;
