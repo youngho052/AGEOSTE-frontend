@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import '../FooterMemberShip/FooterMemberShip.scss';
+
 class FooterMemberShip extends Component {
   render() {
     return (
+      
       <div className='FooterMemberShip'>
         <h4>
           <img src='images/kakao.png' alt='카카오톡 로고입니다.' />
@@ -16,10 +19,11 @@ class FooterMemberShip extends Component {
         <Link to='/' className='enrollment'>
           등록하기
         </Link>
-        <span className='storeNumber d__block'>238개의 매장</span>
-        <Link to='/' className='findStore d__block'>
+        <span className='storeNumber d_block'>238개의 매장</span>
+        <Link to='/' className='findStore d_block'>
           매장 찾기
         </Link>
+
       </div>
     );
   }

@@ -28,7 +28,7 @@ export const FOOTERDATA = [
   },
 ];
 
-export const FOOTERTOPDATA = [
+export const FOOTER_TOP_DATA = [
   { id: 1, name: '무료반품', classNaming: 'fa-recycle' },
   { id: 2, name: '무료배송', classNaming: 'fa-truck' },
   { id: 3, name: '안전결제', classNaming: 'fa-credit-card' },

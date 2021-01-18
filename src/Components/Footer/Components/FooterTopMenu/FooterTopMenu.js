@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { FOOTERTOPDATA } from './data/FooterDatas';
+import { FOOTER_TOP_DATA } from '../../data/FooterDatas';
+import '../FooterTopMenu/FooterTopMenu.scss';
 
 class FooterTopMenu extends Component {
   constructor(props) {
@@ -10,11 +11,13 @@ class FooterTopMenu extends Component {
       footerTopMenu: [],
     };
   }
+  
   componentDidMount = () => {
     this.setState({
-      footerTopMenu: FOOTERTOPDATA,
+      footerTopMenu: FOOTER_TOP_DATA,
     });
   };
+
   render() {
     const { footerTopMenu } = this.state;
     return (
@@ -23,7 +26,7 @@ class FooterTopMenu extends Component {
           return (
             <li key={list.id}>
               <Link to='/'>
-                <span className='d__block'>
+                <span className='d_block'>
                   <i className={`fas ${list.classNaming}`} />
                 </span>
                 {list.name}

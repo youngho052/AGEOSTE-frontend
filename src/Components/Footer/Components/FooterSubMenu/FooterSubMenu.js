@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 
 import FooterList from './FooterList';
-import FooterMemberShip from './FooterMemberShip';
-import { FOOTERDATA } from './data/FooterDatas';
+import FooterMemberShip from '../FooterMemberShip/FooterMemberShip';
+import { FOOTERDATA } from '../../data/FooterDatas';
+import '../FooterSubMenu/FooterSubMenu.scss';
 
 class FooterSubMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      footerSubMenu: [],
+      footerSubMenu: FOOTERDATA,
     };
   }
-  componentDidMount = () => {
-    this.setState({
-      footerSubMenu: FOOTERDATA,
-    });
-  };
+
   render() {
     const { footerSubMenu } = this.state;
-    console.log(footerSubMenu);
+
     return (
       <div className='FooterSubMenu'>
         <div className='footerContainer'>
