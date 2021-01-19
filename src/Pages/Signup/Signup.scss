@@ -37,7 +37,8 @@
     .Id,
     .Pw,
     .CheckPw,
-    .Birth {
+    .Birth,
+    .Phone {
       .effective {
         span {
           display: none;
