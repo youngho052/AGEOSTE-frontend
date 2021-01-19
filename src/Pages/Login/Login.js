@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { SIGN_IN} from './Data/config';
+import { SIGN_IN } from './Data/config';
 import './Login.scss';
 
 class Login extends Component {
@@ -35,20 +35,17 @@ class Login extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        localStorage.setItem("token", result.token);
-        console.log(result);
-        if(result.error === "INVALID_EMAIL"){
-          alert("아이디가 잘못 입력 됬습니다.");
-          return;
+        const errorMsg = {
+          INVALID_EMAIL : "아이디가 잘못 입력 됬습니다.",
+          INVALID_PASSWORD : "비밀번호를 잘못 입력 하셨습니다."
         }
-        if(result.error === "INVALID_PASSWORD"){
-          alert("비밀번호를 잘못 입력 하셨습니다.");
-          return;
-        }
+
+        if(result.error) return alert(errorMsg[result.error]);
+
         if(result.message === "SUCCESS") {
+          localStorage.setItem("token", result.token);
           alert("로그인 성공!");
           this.props.history.push('/main');
-
         }
       })
   }
@@ -56,7 +53,7 @@ class Login extends Component {
   render() {
     const {id, password, showPw} = this.state;
     const icon = showPw ? "fas fa-eye-slash" : "fas fa-eye";
-
+    
     return (
       <div className="Login">
         <h1>로그인</h1>
@@ -105,14 +102,11 @@ class Login extends Component {
                 <Link to='/'><span>비밀번호를 잊으셨나요?</span></Link>
               </div>
             </div>
-            <div className="loginButton">
-              <button
-                type="submit"
-                onClick={this.LoginButton}
-              >
+            <form className="loginButton" onSubmit={this.LoginButton}>
+              <button>
                 로그인
               </button>
-            </div>
+            </form>
           </div>
           <div className="signupCont">
             <div className="signupForm">
