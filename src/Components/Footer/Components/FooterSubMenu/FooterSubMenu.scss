@@ -1,0 +1,32 @@
+.FooterSubMenu {
+  padding: 80px 25px 80px 25px;
+  background-color: #f4f4f4;
+
+  .footerContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .footerListMenu {
+      h4 {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #a0a0a0;
+      }
+
+      ul {
+          
+        li {
+          margin-bottom: 15px;
+          font-size: 14px;
+          color: #737373;
+
+          a {
+            color: #737373;
+          }
+        }
+      }
+    }
+  }
+}
