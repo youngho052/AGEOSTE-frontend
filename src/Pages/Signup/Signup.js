@@ -13,7 +13,6 @@ class Signup extends Component{
       againpw: "",
       phone: "",
       birth: "",
-      name: "",
       allChecked: false,
       firstCheck: false,
       secondCheck: false,
@@ -35,24 +34,20 @@ class Signup extends Component{
       body: JSON.stringify({
         name: username,
         email: id,
-        password: password,
+        password,
         phone_number: phone,
         date_of_birth: birth,
       })
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
-
-        if(result.error === "EXIST_EMAIL") {
-          alert('중복된 이메일 입니다.')
-          return;
+        const errorMsg = {
+          EXIST_EMAIL : '중복된 이메일 입니다.',
+          EXIST_PHONE_NUMBER : '사용중인 휴대폰 번호입니다.',
         }
 
-        if(result.error === "EXIST_PHONE_NUMBER") {
-          alert('사용중인 휴대폰 번호입니다.')
-          return;
-        }
+        if(result.error) return alert(errorMsg[result.error]);
+
         if(result.message === "SUCCESS") {
           alert('회원가입 성공!')
           this.props.history.push('./main')
@@ -73,26 +68,9 @@ class Signup extends Component{
 
   handleCheck = e => {
     const { name } = e.target;
-
-    this.setState({ [name] : !this.state.[name]})
+    
+    this.setState({ [name + "Check"] : !this.state[name + "Check"]})
   }
-
- 
-  // FirsthandleCheck = () => {
-  //   this.setState({
-  //     FirstCheck: !this.state.FirstCheck,
-  //   });
-  // };
-  // SecondhandleCheck = () => {
-  //   this.setState({
-  //     SecondCheck: !this.state.SecondCheck,
-  //   });
-  // };
-  // ThirdhandleCheck = () => {
-  //   this.setState({
-  //     ThirdCheck: !this.state.ThirdCheck,
-  //   });
-  // };
 
   componentDidUpdate(prevProps, prevState) {
     const { firstCheck, secondCheck, thirdCheck } = this.state;
@@ -123,8 +101,8 @@ class Signup extends Component{
   render(){
     const { allChecked, firstCheck, secondCheck, thirdCheck } = this.state;
     
-    const {id, password, phone, username, birth, againpw} = this.state;
-    
+    const { username, id, password, againpw, phone, birth } = this.state;
+  
     //유효성 검사
     const checkPw = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/.test(password);
     const checkrePw = password === againpw;
@@ -143,7 +121,7 @@ class Signup extends Component{
             </div>
             <input
               id="username"
-              className="nameInput input__padding" 
+              className="signInput input_padding" 
               type="text"
               placeholder="이름"
               onChange={this.signupInput}
@@ -156,7 +134,7 @@ class Signup extends Component{
             <div className={`effective ${id && "sign"}`}>
               <input 
                 id="id"
-                className="idInput input__padding"
+                className="signInput input_padding"
                 type="text"
                 placeholder="아이디(이메일)"
                 onChange={this.signupInput}
@@ -173,7 +151,7 @@ class Signup extends Component{
             <div className={`effective ${password && "sign"}`}>
               <input 
                 id="password"
-                className="pwInput input__padding"
+                className="signInput input_padding"
                 type="password" 
                 placeholder="비밀번호"
                 onChange={this.signupInput}
@@ -192,7 +170,7 @@ class Signup extends Component{
             <div className={`effective ${againpw && "sign"}`}>
               <input 
                 id="againpw"
-                className="againpwInput input__padding"
+                className="signInput input_padding"
                 type="password" 
                 placeholder="비밀번호 확인"
                 onChange={this.signupInput}
@@ -209,7 +187,7 @@ class Signup extends Component{
             <div className={`effective ${phone && "sign"}`}>
               <input
                 id="phone"
-                className="phoneInput input__padding"
+                className="signInput input_padding"
                 type="text" 
                 placeholder="-제외 숫자만 입력(11자리)"
                 onChange={this.signupInput}
@@ -227,7 +205,7 @@ class Signup extends Component{
             <div className={`effective ${birth && "sign"}`}>
               <input
                 id="birth"
-                className="BirthInput input__padding" 
+                className="signInput input_padding" 
                 type="text"
                 placeholder="숫자만 입력(8자리)"
                 onChange={this.signupInput}
@@ -250,7 +228,7 @@ class Signup extends Component{
             </div>
             <div className="agreesubCheck">
               <input 
-                name="firstCheck"
+                name="first"
                 type="checkbox"
                 checked={firstCheck}
                 onChange={this.handleCheck}
@@ -259,7 +237,7 @@ class Signup extends Component{
             </div>
             <div className="agreesubCheck">
               <input 
-                name="secondCheck"
+                name="second"
                 type="checkbox"
                 checked={secondCheck}
                 onChange={this.handleCheck}
@@ -268,7 +246,7 @@ class Signup extends Component{
             </div>
             <div className="agreesubCheck">
               <input 
-                name="thirdCheck"  
+                name="third"  
                 type="checkbox"
                 checked={thirdCheck}
                 onChange={this.handleCheck}

@@ -37,52 +37,7 @@
     .Id,
     .Pw,
     .CheckPw,
-    .Birth {
-      .effective {
-        span {
-          display: none;
-        }
-
-        &.sign {
-          input {
-            height: 16px;
-          }
-
-          span {
-            display: block;
-            font-size: 12px;
-            margin: 5px 0 0 0;
-            margin-left: 25px;
-
-            &.complete {
-              color: blue;
-            }
-
-            &.fail {
-              color: red;
-            }
-          }
-        }
-      }
-
-      .nameInput,
-      .idInput,
-      .pwInput,
-      .againpwInput,
-      .BirthInput {
-        width: 450px;
-        height: 26px;
-        margin-left: 20px;
-        border: 1px solid rgb(230, 230, 230);
-        border-radius: 5px;
-        outline: none;
-      }
-    }
-
-    .Birth {
-      border-bottom: 1px solid #000;
-    }
-
+    .Birth,
     .Phone {
       .effective {
         span {
@@ -97,8 +52,7 @@
           span {
             display: block;
             font-size: 12px;
-            margin: 5px 0 0 0;
-            margin-left: 25px;
+            margin: 5px 0 0 25px;
 
             &.complete {
               color: blue;
@@ -111,9 +65,9 @@
         }
       }
 
-      .phoneInput {
-        width: 330px;
-        height: 25px;
+      .signInput {
+        width: 450px;
+        height: 26px;
         margin-left: 20px;
         border: 1px solid rgb(230, 230, 230);
         border-radius: 5px;
@@ -129,6 +83,16 @@
         border-radius: 5px;
         outline: none;
         cursor: pointer;
+      }
+    }
+
+    .Birth {
+      border-bottom: 1px solid #000;
+    }
+
+    .Phone {
+      .signInput {
+        width: 330px;
       }
     }
 
