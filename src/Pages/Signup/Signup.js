@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { SERVER_SIGNUP } from './Data/Config';
+import Footer from '../../Components/Footer/Footer';
+import Navbar from '../../Components/Navbar/Navbar';
 import './Signup.scss';
 
 class Signup extends Component{
@@ -112,6 +114,8 @@ class Signup extends Component{
     
     console.log({username, id, password, againpw, phone, birth});
     return(
+      <>
+      <Navbar />
       <div className="Signup">
         <div className="signupContainer">
         <h1>회원가입</h1>
@@ -265,6 +269,8 @@ class Signup extends Component{
           </div>
         </div>
       </div>
+      <Footer />
+      </>
     );
   } 
 }
