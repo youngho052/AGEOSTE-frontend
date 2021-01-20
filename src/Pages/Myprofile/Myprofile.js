@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Tear from './Components/Tear';
 import Mytear from './Components/Mytear';
+import { SERVER_ACCOUNT } from './Data/config';
 import './Myprofile.scss';
 
 const NAV_CONTENT = [
@@ -31,15 +32,26 @@ class Myprofile extends Component {
       .then(response => response.json())
       .then(gradeList => this.setState({gradeList}))
 
-    fetch('/data/userData.json')
+    fetch('SERVER_ACCOUNT',{
+      // body: JSON.stringify({
+      //   name: "",
+      //   email: "",
+      //   phone_number: "",
+      //   date_of_birth: "",
+      // })
+    })
+    
       .then(response => response.json())
-      .then(userList => this.setState({userList}))
+      .then(result => {
+        console.log(result);
+      })
   }
 
   render() {
     const { gradeList, userList } = this.state;
     
-    console.log(userList)
+    console.log(userList);
+
     return (
       <div className="Myprofile">
         <div className="profile">
