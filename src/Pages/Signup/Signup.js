@@ -46,6 +46,7 @@ class Signup extends Component{
         const errorMsg = {
           EXIST_EMAIL : '중복된 이메일 입니다.',
           EXIST_PHONE_NUMBER : '사용중인 휴대폰 번호입니다.',
+          KEY_ERROR : '정보를 입력해주세요',
         }
 
         if(result.error) return alert(errorMsg[result.error]);
@@ -259,13 +260,15 @@ class Signup extends Component{
             </div>
           </div>
           <div className="success">
-            <Link to="/login"><button className="cancle">취소</button></Link>
+            <form onSubmit={ (e) => e.preventDefault(e) }>
+              <Link to="/login"><button className="cancle">취소</button></Link>
               <button 
                 className="sign"
                 onClick={this.signupId}
               >
                 회원가입
               </button>
+            </form>
           </div>
         </div>
       </div>
