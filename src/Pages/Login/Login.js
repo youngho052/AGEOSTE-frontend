@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { SIGN_IN } from './Data/config';
-import Navbar from '../../Components/Navbar';
-import Footer from '../../Components/Footer';
+// import Navbar from '../../Components/Navbar';
+// import Footer from '../../Components/Footer';
 import './Login.scss';
 
 class Login extends Component {
