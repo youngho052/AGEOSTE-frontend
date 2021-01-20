@@ -32,19 +32,13 @@ class Myprofile extends Component {
       .then(response => response.json())
       .then(gradeList => this.setState({gradeList}))
 
-    fetch('SERVER_ACCOUNT',{
-      // body: JSON.stringify({
-      //   name: "",
-      //   email: "",
-      //   phone_number: "",
-      //   date_of_birth: "",
-      // })
-    })
-    
-      .then(response => response.json())
-      .then(result => {
-        console.log(result);
-      })
+    // fetch(SERVER_ACCOUNT)
+    //   .then(res => res.json())
+    //   .then(result => {
+    //     if()
+    //   })
+
+         
   }
 
   render() {
