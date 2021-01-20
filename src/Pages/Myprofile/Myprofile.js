@@ -39,6 +39,7 @@ class Myprofile extends Component {
   render() {
     const { gradeList, userList } = this.state;
     
+    console.log(userList)
     return (
       <div className="Myprofile">
         <div className="profile">
@@ -79,8 +80,8 @@ class Myprofile extends Component {
             <div className="userInfo">
               {userList.map((user, index) => {
                 return(
-                  <>
-                    <ul key={index}>
+                  <React.Fragment key={index}>
+                    <ul>
                       <li>내정보</li>
                       <li>성명: {user.name}</li>
                       <li>이메일: {user.email}</li>
@@ -89,7 +90,7 @@ class Myprofile extends Component {
                       <li>비밀번호: {user.password}</li>
                     </ul>
                     <Link to='/'><span>수정</span></Link>
-                  </>
+                  </React.Fragment>
                 )
               })}
             </div>
