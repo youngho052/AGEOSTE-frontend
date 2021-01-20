@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { SIGN_IN } from './Data/config';
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/Footer';
 import './Login.scss';
 
 class Login extends Component {
@@ -55,6 +57,8 @@ class Login extends Component {
     const icon = showPw ? "fas fa-eye-slash" : "fas fa-eye";
     
     return (
+      <>
+      <Navbar />
       <div className="Login">
         <h1>로그인</h1>
         <div className="loginContainer"> 
@@ -102,8 +106,8 @@ class Login extends Component {
                 <Link to='/'><span>비밀번호를 잊으셨나요?</span></Link>
               </div>
             </div>
-            <form className="loginButton" onSubmit={this.LoginButton}>
-              <button>
+            <form className="loginButton" onSubmit={ (e) => e.preventDefault(e)}>
+              <button onClick={this.LoginButton}>
                 로그인
               </button>
             </form>
@@ -123,6 +127,8 @@ class Login extends Component {
           </div>
         </div>
       </div>  
+      <Footer />
+      </>
     );
   }
 }
