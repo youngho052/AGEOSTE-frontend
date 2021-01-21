@@ -1,0 +1,165 @@
+.Signup {
+  width: 1000px;
+  height: 1400px;
+  margin: 0 auto;
+  padding: 25px;
+  font-size: 14px;
+
+  h1 {
+    font-size: 25px;
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  .Form {
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    height: 75px;
+    margin-top: 2px;
+    border-top: 1px solid #000;
+  }
+
+  .signForm {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 75px;
+    background-color: rgb(245, 245, 245);
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .signupContainer {
+    margin-top: 20px;
+
+    .Name,
+    .Id,
+    .Pw,
+    .CheckPw,
+    .Birth,
+    .Phone {
+      .effective {
+        span {
+          display: none;
+        }
+
+        &.sign {
+          input {
+            height: 36px;
+          }
+
+          span {
+            display: block;
+            font-size: 12px;
+            margin: 5px 0 0 25px;
+
+            &.complete {
+              color: blue;
+            }
+
+            &.fail {
+              color: red;
+            }
+          }
+        }
+      }
+
+      .signInput {
+        width: 450px;
+        height: 46px;
+        margin-left: 20px;
+        border: 1px solid rgb(230, 230, 230);
+        border-radius: 5px;
+        outline: none;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        margin-left: 20px;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
+    .Phone {
+      .signInput {
+        width: 330px;
+      }
+    }
+
+    .Agree {
+      width: 1000px;
+      height: 420px;
+      margin-top: 30px;
+      border: 1px solid #000;
+
+      h2 {
+        margin-top: 50px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .agreeCheck {
+        display: flex;
+        align-items: center;
+        margin: 0 0 20px 100px;
+        font-size: 15px;
+
+        input {
+          margin: 0 10px 0 15px;
+        }
+      }
+
+      .agreesubCheck {
+        display: flex;
+        align-items: center;
+        width: 800px;
+        height: 70px;
+        margin-left: 100px;
+        border: 1px solid rgb(230, 230, 230);
+        font-size: 15px;
+
+        input {
+          margin: 0 10px 0 15px;
+        }
+      }
+    }
+
+    .success {
+      text-align: center;
+      margin-top: 20px;
+
+      .cancle {
+        width: 180px;
+        height: 40px;
+        margin-right: 15px;
+        background-color: #fff;
+        border: 1px solid gray;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .sign {
+        width: 180px;
+        height: 40px;
+        background-color: #fff;
+        border: 1px solid gray;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: green;
+        }
+      }
+    }
+  }
+}
