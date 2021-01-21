@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import NavbarMenu from './Components/NavbarMenu/NavbarMenu';
 import NavbarUser from './Components/NavbarUser/NavbarUser';
 import { NAVBAR_DATA } from './data/NavbarData';
-
 import '../Navbar/Navbar.scss';
+
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -32,11 +32,7 @@ class Navbar extends Component {
           <Link to='/'>
             <img src='images/logo.png' alt='ageoste홈페이지 로고입니다.' />
           </Link>
-          <NavbarMenu
-            onSubMenuList={this.state.menuList}
-
-
-          />
+          <NavbarMenu onSubMenuList={this.state.menuList} />
           <NavbarUser />
         </div>
       </nav>
