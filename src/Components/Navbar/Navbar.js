@@ -9,7 +9,7 @@ class Navbar extends Component {
     return (
       <nav className='Navbar'>
         <Link to='/'>
-          <img src='images/logo.png' alt='ageoste홈페이지 로고입니다.' />
+          <img src='/images/logo.png' alt='ageoste홈페이지 로고입니다.' />
         </Link>
         <NavbarMenu />
         <NavbarUser />

@@ -1,8 +1,12 @@
 .Navbar {
+  position: fixed;
+  width:100%;
+  z-index: 1;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px;
+  padding: 25px 80px;
   
   .NavbarMenu {
     display: flex;
