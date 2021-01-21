@@ -10,7 +10,6 @@ class Navbar extends Component {
     super(props);
     this.state = {
       menuList: [],
-      submenu: [],
     };
   }
   componentDidMount = () => {
@@ -18,13 +17,13 @@ class Navbar extends Component {
       menuList: NAVBAR_DATA,
     });
   };
-  onMenuData = (id) => {
-    const menuList = this.state.menuList;
-    const submenuFind = menuList.find((item) => item.id === id);
-    this.setState({
-      submenu: submenuFind.submenu,
-    });
-  };
+  // onMenuData = (id) => {
+  //   const menuList = this.state.menuList;
+  //   const submenuFind = menuList.find((item) => item.id === id);
+  //   this.setState({
+  //     submenu: submenuFind.submenu,
+  //   });
+  // };
 
   render() {
     return (
@@ -35,8 +34,8 @@ class Navbar extends Component {
           </Link>
           <NavbarMenu
             onSubMenuList={this.state.menuList}
-            updateSubMenu={this.onMenuData}
-            sendMenuList={this.state.submenu}
+
+
           />
           <NavbarUser />
         </div>
