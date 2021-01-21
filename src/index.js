@@ -7,8 +7,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Routes />
-  </React.StrictMode>,
+  
+  <Routes />,
   document.getElementById('root')
 );
