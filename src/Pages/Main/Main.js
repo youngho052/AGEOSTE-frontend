@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Footer from '../../Components/Footer/Footer';
+
 import Navbar from '../../Components/Navbar/Navbar';
 import { PROMOTION, SEASON_OFF } from './data/MainData';
 import MainPromotions from './Components/MainPromotions/MainPromotions';
