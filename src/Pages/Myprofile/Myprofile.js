@@ -67,7 +67,6 @@ class Myprofile extends Component {
 
   render() {
     const { gradeList, userInfo} = this.state;
-    console.log(userInfo.is_active)
 
     return (
       <>
