@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../ProductSize/ProductSize.scss';
+
 class ProductSize extends Component {
   render() {
-    
     return (
       <div className='ProductSize'>
         <div className='sizeContainer'>

@@ -52,6 +52,7 @@ class ProductDetail extends Component {
         .then(() => window.scrollTo(0, 0));
     }
   };
+
   onhandleToggle = (id, color) => {
     const { size } = this.state;
     if (size === '') {
@@ -75,6 +76,7 @@ class ProductDetail extends Component {
       imageId: color[0].img[0].color_image_id,
     });
   };
+
   onSubmit = () => {
     const { productId, size, colorId, imageId } = this.state;
     fetch(`${SERVER}/order/cart`, {
@@ -90,14 +92,12 @@ class ProductDetail extends Component {
         image_id: imageId,
       }),
     }).then(() => this.setState({ meassage: !this.state.meassage }));
+
     setTimeout(() => {
       this.setState({
         toggle:!this.state.toggle
       })
       }, 3000) 
-      
-      
-  
   };
   render() {
     const {

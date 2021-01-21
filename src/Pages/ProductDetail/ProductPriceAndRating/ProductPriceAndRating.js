@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import '../../ProductDetail/ProductPriceAndRating/ProductPriceAndRating.scss';
+
 class ProductPriceAndRating extends Component {
   render() {
 		const {discount,price,name,rating} = this.props
