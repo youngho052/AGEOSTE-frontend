@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../WearCollection/WearCollection.scss';
+
 class WearCollection extends Component {
   render() {
     return (

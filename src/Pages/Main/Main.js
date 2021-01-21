@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import { PROMOTION, SEASON_OFF } from './data/MainData';
-import MainPromotions from './Components/MainPromotions';
+import MainPromotions from './Components/MainPromotions/MainPromotions';
 
 import CollectionSlider from '../../Components/CollectionSlider/CollectionSlider';
 import WearCollection from '../../Components/WearCollection/WearCollection';
-import MainSalesList from './Components/MainSalesList';
+import MainSalesList from './Components/MainSalesList/MainSalesList';
+import ProductListSlider from '../../Components/ProductListSlider/ProductListSlider';
+import { SERVER } from '../../config/Server';
 import './Main.scss';
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      productList: [],
+    };
+  }
+  componentDidMount = () => {
+    fetch(`${SERVER}/product?order=?&page_count=8`)
+      .then((response) => response.json())
+      .then((result) => this.setState({ productList: result.PRODUCTS_LIST }));
+  };
+
   render() {
+    const { productList } = this.state;
     return (
       <>
         <Navbar />
@@ -30,6 +45,7 @@ class Main extends Component {
                   imgUrl={item.imgUrl}
                   altMsg={item.altMsg}
                 />
+                
               </section>
             );
           })}
@@ -45,11 +61,10 @@ class Main extends Component {
             <h2>The AGEOSTE World</h2>
             <MainSalesList />
           </section>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>3</div>
-          <div>4</div>
+          <section className='selfRecomandList'>
+            <h2>나만을 위한 아고스테의 맞춤형 추천</h2>
+            <ProductListSlider productListItem={productList} />
+          </section>
         </main>
       </>
     );

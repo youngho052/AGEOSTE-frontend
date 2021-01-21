@@ -1,0 +1,50 @@
+{
+  "PRODUCTS_LIST":[
+      {
+        "id": 1,
+        "name": "영호님이 폴로",
+        "price": "71000.00",
+        "discount_rate": 20,
+        "review_score_avg": 2.0,
+        "thumbnail": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dw3124abc0/BF1272-20D_5KL_20.jpg?imwidth=915&impolicy=product",
+        "color_count": 1
+      },
+      {
+        "id": 2,
+        "name": "영호님이 자주 입는 모든 키즈 슈즈 제품",
+        "price": "117000.00",
+        "discount_rate": 20,
+        "review_score_avg": 3.0,
+        "thumbnail": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dw3124abc0/BF1272-20D_5KL_20.jpg?imwidth=915&impolicy=product",
+        "color_count": 2
+			},
+			{
+				"id": 3,
+				"name": "영호님이 자주 입는",
+				"price": "50000.00",
+				"discount_rate": 10,
+				"review_score_avg": 2.0,
+				"thumbnail": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dw6b56a529/VF6647-19C_166_20.jpg?imwidth=915&impolicy=product",
+				"color_count": 2
+			},
+			{
+				"id": 4,
+				"name": "키즈 슈즈 제품",
+				"price": "117000.00",
+				"discount_rate": 50,
+				"review_score_avg": 3.0,
+				"thumbnail": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dw6b56a529/VF6647-19C_166_20.jpg?imwidth=915&impolicy=product",
+				"color_count": 2
+			},
+			{
+				"id": 4,
+				"name": "키즈 슈즈 제품",
+				"price": "117000.00",
+				"discount_rate": 30,
+				"review_score_avg": 3.0,
+				"thumbnail": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dw6b56a529/VF6647-19C_166_20.jpg?imwidth=915&impolicy=product",
+				"color_count": 1
+			}
+  ]
+}
+

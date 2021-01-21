@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { ON_SALE } from '../data/MainData';
+import { ON_SALE } from '../../data/MainData';
+
+import '../MainSalesList/MainSalesList.scss';
 class MainSalesList extends Component {
   render() {
     return (

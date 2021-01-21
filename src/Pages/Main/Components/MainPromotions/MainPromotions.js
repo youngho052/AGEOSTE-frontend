@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
+import '../MainPromotions/MainPromotions.scss';
 class MainPromotions extends Component {
   render() {
     return (
