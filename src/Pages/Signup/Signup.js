@@ -53,7 +53,7 @@ class Signup extends Component{
 
         if(result.message === "SUCCESS") {
           alert('회원가입 성공!')
-          this.props.history.push('./main')
+          this.props.history.push('./login')
         }
       })
   }
@@ -75,7 +75,7 @@ class Signup extends Component{
     this.setState({ [name + "Check"] : !this.state[name + "Check"]})
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_, prevState) {
     const { firstCheck, secondCheck, thirdCheck } = this.state;
     let prevtruecnt = 0,
         curtruecnt = 0;
