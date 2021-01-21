@@ -6,10 +6,9 @@ import '../FooterMemberShip/FooterMemberShip.scss';
 class FooterMemberShip extends Component {
   render() {
     return (
-      
       <div className='FooterMemberShip'>
         <h4>
-          <img src='images/kakao.png' alt='카카오톡 로고입니다.' />
+          <img src='/images/kakao.png' alt='카카오톡 로고입니다.' />
           <span>AGEOSTE KAKAO FRIEND</span>
         </h4>
         <p>
