@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import Tear from './Components/Tear';
-// import Mytear from './Components/Mytear';
+import Footer from '../../Components/Footer/Footer';
+import Navbar from '../../Components/Navbar/Navbar';
 import { SERVER_ACCOUNT, SERVER_AUTH } from './Data/config';
 import './Myprofile.scss';
 
@@ -31,11 +31,11 @@ class Myprofile extends Component {
     fetch('/data/data.json')
       .then(response => response.json())
       .then(result => this.setState({gradeList : result}))
-
+    
     fetch(SERVER_ACCOUNT, {
       method: 'GET',
       headers : {
-        Authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMn0.MvbM5ZJG5RDlzXuV6OUhpHZJb0KUE8djPpDDAR5hnzU'
+        Authorization: localStorage.getItem("token")
       }})
         .then(res => res.json())
         .then(result => {
@@ -70,78 +70,82 @@ class Myprofile extends Component {
     console.log(userInfo.is_active)
 
     return (
-      <div className="Myprofile">
-        <div className="profile">
-          <div className="intro">
-            <div className="welcome">
-              <p><span>안녕하세요 {userInfo.name}</span> 님 마이페이지에 오신 것을 환영합니다.</p>
-            </div>
-            <div className="logo">
-              <img src="images/logo.png" alt="아거스테 로고" />
-            </div>
-          </div>
-          <div className="navBar">
-            <ul className="nav">
-              {NAV_CONTENT.map((el, index) => {
-                return(
-                  <li className="menu" key={index}>{el.name}</li>
-                )
-              })}
-            </ul>
-          </div>
-          <div className='Membership'>
-            {gradeList.map((grade) =>{
-              return(
-                <div className="Tear">
-                  {!!userInfo.membership && (<div className={`member ${userInfo.membership.grade === grade.membership && 'true'}`}>
-                    <img src={grade.image} alt="티어별 이미지" />
-                    <span>{grade.name}</span>
-                    <span>자격요건: {grade.tear}</span>
-                    <span>적립률: {grade.point}</span>
-                    <span>생일쿠폰: {grade.birth}</span>
-                    <span>레벨업그레이드: {grade.levelup}</span>
-                  </div>)}
-                  <div className="more">
-                    <button><Link to='/'>+더 보기</Link></button>
-                  </div>
-                </div>     
-              )
-            })}
-          </div>
-          <div className="infoCont">
-            <div className="userInfo">
-              <h1>내정보</h1>
-              <div className="info">
-                <p>이름: {userInfo.name}</p>
-                <div className="auth">
-                  <div className="myAuth">
-                    <p>이메일: {userInfo.email}</p>
-                    <span className={`authEmail ${userInfo.is_active && 'true'}`}>
-                    { userInfo.is_active ? '인증완료' : '인증되지 않은 메일입니다.' }
-                    </span>
-                  </div>
-                  <button onClick={this.authHandle}>
-                    인증받기
-                  </button>
-                </div>
-                <p>휴대폰 번호: {userInfo.phone_number}</p>
-                <p>생일: {userInfo.date_of_birth === null ? '없다' : userInfo.date_of_birth}</p>
+      <>
+        <Navbar />
+        <div className="Myprofile">
+          <div className="profile">
+            <div className="intro">
+              <div className="welcome">
+                <p><span>안녕하세요 {userInfo.name}</span> 님 마이페이지에 오신 것을 환영합니다.</p>
+              </div>
+              <div className="logo">
+                <img src="images/logo.png" alt="아거스테 로고" />
               </div>
             </div>
-            <div className="secondCont">
-              {INFORMATION.map((info) => {
-                return (
-                  <div className="cont">
-                    <h1>{info.name}</h1>
-                    <span>{info.content}</span>
-                    <Link className="link" to='/'>{info.link}</Link>
-                  </div>
+            <div className="navBar">
+              <ul className="nav">
+                {NAV_CONTENT.map((el, index) => {
+                  return(
+                    <li className="menu" key={index}>{el.name}</li>
+                  )
+                })}
+              </ul>
+            </div>
+            <div className='Membership'>
+              {gradeList.map((grade, index) =>{
+                return(
+                  <div className="Tear" key={index}>
+                    {!!userInfo.membership && (<div className={`member ${userInfo.membership.grade === grade.membership && 'true'}`}>
+                      <img src={grade.image} alt="티어별 이미지" />
+                      <span>{grade.name}</span>
+                      <span>자격요건: {grade.tear}</span>
+                      <span>적립률: {grade.point}</span>
+                      <span>생일쿠폰: {grade.birth}</span>
+                      <span>레벨업그레이드: {grade.levelup}</span>
+                    </div>)}
+                    <div className="more">
+                      <button><Link to='/'>+더 보기</Link></button>
+                    </div>
+                  </div>     
                 )
               })}
+            </div>
+            <div className="infoCont">
+              <div className="userInfo">
+                <h1>내정보</h1>
+                <div className="info">
+                  <p>이름: {userInfo.name}</p>
+                  <div className="auth">
+                    <div className="myAuth">
+                      <p>이메일: {userInfo.email}</p>
+                      <span className={`authEmail ${userInfo.is_active && 'true'}`}>
+                      { userInfo.is_active ? '인증완료' : '인증되지 않은 메일입니다.' }
+                      </span>
+                    </div>
+                    <button onClick={this.authHandle}>
+                      인증받기
+                    </button>
+                  </div>
+                  <p>휴대폰 번호: {userInfo.phone_number}</p>
+                  <p>생일: {userInfo.date_of_birth === null ? '없다' : userInfo.date_of_birth}</p>
+                </div>
+              </div>
+              <div className="secondCont">
+                {INFORMATION.map((info, index) => {
+                  return (
+                    <div className="cont" key={index}>
+                      <h1>{info.name}</h1>
+                      <span>{info.content}</span>
+                      <Link className="link" to='/'>{info.link}</Link>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <Footer />
+      </>
     );
   }
 }
