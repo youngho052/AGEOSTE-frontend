@@ -1,14 +1,17 @@
 .ProductList {
-	width: 100%;
+  width: 100%;
+
   .product__wrap {
-		position: relative;
-		left:80px;
+    position: relative;
+    left: 80px;
+
     .imgContainer {
       position: relative;
+
       img {
         object-fit: cover;
         object-position: top;
-				max-width: 90%;
+        max-width: 90%;
       }
 
       span {
@@ -23,8 +26,9 @@
     }
 
     .contentWrap {
+      
       .discountCalc {
-				display: block;
+        display: block;
         width: 70px;
         padding: 4px 8px;
         margin: 15px 0;
@@ -38,24 +42,29 @@
       .titleName {
         margin: 15px 0;
         font-size: 14px;
+        a {
+          color: #292929;
+        }
         &:hover {
           text-decoration: underline;
         }
       }
 
-			.rating{
-				display: flex;
-				align-items: center;
-				li{
-					margin-right:.8px;
-					margin-bottom:5px;
-					svg{
-						width:.9em;
-						color:rgb(6, 154, 104);
-					}
-				}
+      .rating {
+        display: flex;
+        align-items: center;
+
+        li {
+          margin-right: 0.8px;
+          margin-bottom: 5px;
+
+          svg {
+            width: 0.9em;
+            color: rgb(6, 154, 104);
+          }
+        }
       }
-      
+
       .price,
       .disCount {
         display: block;

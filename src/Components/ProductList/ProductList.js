@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom';
+import { Link , withRouter } from 'react-router-dom';
 import '../ProductList/ProductList.scss';
 
 class ProductList extends Component {
-  goToDetails = (id) => {
-    this.props.history.push(`/product/detail/${id}`);
-  }
+
   render() {
     const { id,name, price, discount, review, thumbnail, colorCount } = this.props;
     const stars = Array.of(0, 0, 0, 0, 0);
@@ -19,7 +17,9 @@ class ProductList extends Component {
           </div>
           <div className='contentWrap'>
             <span className='discountCalc'>{`${discount}% 세일`}</span>
-            <h3 className='titleName' onClick={() => this.goToDetails(id)}>{name}</h3>
+            <h3 className='titleName'>
+              <Link to={`/product/detail/${id}`}>{name}</Link>
+            </h3>
             <ul className="rating">
               {stars.map((star, idx) => {
                 return (

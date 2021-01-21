@@ -32,7 +32,6 @@ class ProductListSlider extends Component {
                 review={item.review_score_avg}
                 thumbnail={item.thumbnail}
                 colorCount={item.color_count}
-                
               />
             );
           })}
