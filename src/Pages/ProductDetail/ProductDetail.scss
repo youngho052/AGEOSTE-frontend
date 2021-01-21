@@ -8,9 +8,11 @@
     img {
       width: 50%;
     }
+
     .detail__content {
       width: 490px;
       margin: 0 auto;
+
       .detail__sale {
         display: block;
         width: 75px;
@@ -24,11 +26,13 @@
       }
 
       .colorSelect {
+
         p {
           font-size: 20px;
           font-weight: 600;
           color: #292929;
         }
+
         a {
           display: inline-block;
           width: 40px;
@@ -37,11 +41,13 @@
           border: 1px solid rgb(145, 145, 145);
           background-color: rgb(147, 147, 160);
           border-radius: 50%;
+
           &:nth-child(2) {
             background-color: burlywood;
           }
         }
       }
+
       .shopingCart{
         width:100%;
         padding:12px;
@@ -52,11 +58,13 @@
         background-color: #187c48;
         border-radius: 25px;
       }
+
       .sizeContainer {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
+      
       .transfrom{
         font-size:13px;
         color:#ccc;

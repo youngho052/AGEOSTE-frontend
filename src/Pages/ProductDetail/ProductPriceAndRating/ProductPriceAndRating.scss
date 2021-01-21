@@ -1,36 +1,44 @@
 .ProductPriceAndRating {
+
   h2 {
     font-size: 1.8rem;
     font-weight: normal;
     margin-bottom: 15px;
     line-height: 2.8rem;
   }
+
   .price__rating {
     display: flex;
     flex: 1;
     align-items: flex-start;
     justify-content: space-between;
+
     .rating {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
+
       li {
         margin-right: 0.8px;
         margin-bottom: 5px;
+
         svg {
           width: 0.9em;
           color: rgb(6, 154, 104);
         }
       }
     }
+
     .payMent {
       text-align: right;
+
       .discount {
         display: block;
         margin-bottom: 10px;
         font-size: 26px;
         color: #4ca2cf;
       }
+      
       .price {
         font-size: 18px;
         text-decoration: line-through;
