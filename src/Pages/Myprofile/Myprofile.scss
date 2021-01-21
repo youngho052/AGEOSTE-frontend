@@ -43,8 +43,8 @@
         background-color: #fff;
 
         img {
-          width: 160px;
-          padding: 35px 0 0 60px;
+          width: 240px;
+          padding: 35px 0 0 56px;
         }
       }
     }
@@ -80,39 +80,111 @@
     .Membership {
       display: flex;
       background-color: #e7e7e7;
+
+      .Tear {
+        .member {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 307px;
+          height: 400px;
+          margin-top: 20px;
+          border: 1px solid #000;
+          background-color: #f2f2f2;
+
+          &.true {
+            background-color: #244381;
+            border: none;
+
+            span {
+              color: yellow;
+            }
+          }
+
+          img {
+            width: 70px;
+          }
+
+          span {
+            margin-top: 15px;
+          }
+        }
+        .more {
+          display: flex;
+          justify-content: center;
+          width: 307px;
+          height: 50px;
+          text-align: center;
+          background-color: #182a4e;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
     }
 
     .infoCont {
       display: flex;
-      margin-top: 23px;
 
       .userInfo {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         width: 460px;
         height: 331px;
         background-color: #fff;
         border: 1px solid rgb(197, 197, 197);
 
-        .test {
-          &.a {
-            color: blue;
-          }
-          &.b {
-            color: red;
-          }
+        h1 {
+          margin-top: 10px;
+          font-size: 20px;
+          text-align: center;
         }
 
-        ul {
-          margin-top: 30px;
-          li {
-            margin-top: 5px;
-            padding: 20px 0 0 55px;
+        .info {
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          margin: 15px auto;
+
+          p {
+            padding: 10px;
+            margin-top: 13px;
+            font-size: 18px;
           }
-        }
-        a {
-          margin-top: 60px;
-          margin-right: 20px;
+
+          .auth {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .myAuth {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+
+              .authEmail {
+                color: red;
+                margin-left: 25px;
+
+                &.true {
+                  color: blue;
+                }
+              }
+            }
+            button {
+              width: 80px;
+              height: 30px;
+              background-color: rgb(34, 190, 34);
+              border-radius: 5px;
+
+              &:hover {
+                background-color: rgb(4, 119, 4);
+              }
+            }
+          }
         }
       }
 
