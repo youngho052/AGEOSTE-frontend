@@ -1,5 +1,13 @@
 [
   {
+    "tear": "10만원 이상시",
+    "point": "3%",
+    "birth": "2만원",
+    "levelup": "3,000포인트",
+    "image": "images/Silver.png",
+    "name": "Silver"
+  },
+  {
     "tear": "80만원 이상시",
     "point": "7%",
     "birth": "3만원",

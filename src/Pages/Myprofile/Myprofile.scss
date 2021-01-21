@@ -1,12 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 .Myprofile {
   width: 100%;
   background-color: rgb(0, 66, 11);
   font-size: 14px;
   padding: 25px;
+  margin-top: 80px;
 
   .profile {
     width: 920px;
-    height: 1000px;
+    height: 950px;
     margin: 0 auto;
     background-color: #fff;
 
@@ -79,6 +84,7 @@
 
     .infoCont {
       display: flex;
+      margin-top: 23px;
 
       .userInfo {
         display: flex;
@@ -87,6 +93,15 @@
         height: 331px;
         background-color: #fff;
         border: 1px solid rgb(197, 197, 197);
+
+        .test {
+          &.a {
+            color: blue;
+          }
+          &.b {
+            color: red;
+          }
+        }
 
         ul {
           margin-top: 30px;

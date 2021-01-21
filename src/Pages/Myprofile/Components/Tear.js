@@ -10,6 +10,7 @@ class Tear extends Component {
 
   render() {
     const {image, name, point, birth, level, grades} = this.props;
+    
     return (
       <div className="Tear">
         <div className="member">

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Tear from './Components/Tear';
 import Mytear from './Components/Mytear';
-import { SERVER_ACCOUNT } from './Data/config';
+import { SERVER_ACCOUNT, SERVER_AUTH } from './Data/config';
 import './Myprofile.scss';
 
 const NAV_CONTENT = [
@@ -24,6 +24,7 @@ class Myprofile extends Component {
     this.state = {
       gradeList: [],
       userList: [],
+      test: "",
     }
   }
 
@@ -32,26 +33,51 @@ class Myprofile extends Component {
       .then(response => response.json())
       .then(gradeList => this.setState({gradeList}))
 
-    // fetch(SERVER_ACCOUNT)
+    fetch('data/account.json')
+      .then(res => res.json())
+      .then(result => this.setState({ userList : result[0]}))
+  }
+  //   fetch(SERVER_ACCOUNT, {
+  //     method: 'GET',
+  //     headers : {
+  //       Authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMn0.MvbM5ZJG5RDlzXuV6OUhpHZJb0KUE8djPpDDAR5hnzU'
+  //     }})
+  //       .then(res => res.json())
+  //       .then(result => {
+  //         this.setState({userList : result.accounts})
+  //       })   
+  // }
+
+  authHandle = (e) => {
+    // const email = this.state.userList.email;
+
+    // fetch(SERVER_AUTH,{
+    //   method: 'POST',
+    //   body : JSON.stringify({
+    //     email: email,
+    //   }),
+    // })
     //   .then(res => res.json())
     //   .then(result => {
-    //     if()
+    //     this.setState({email : result})
     //   })
+    console.log("z클릭")
+  }
 
-         
+  authsuccess = (e) => {
+    console.log("인증완료")
   }
 
   render() {
-    const { gradeList, userList } = this.state;
+    const { gradeList, userList} = this.state;
     
-    console.log(userList);
-
+    // console.log(userList.accounts.name)
     return (
       <div className="Myprofile">
         <div className="profile">
           <div className="intro">
             <div className="welcome">
-              <p><span>안녕하세요 {}</span> 님 마이페이지에 오신 것을 환영합니다.</p>
+              <p><span>안녕하세요 {userList.name}</span> 님 마이페이지에 오신 것을 환영합니다.</p>
             </div>
             <div className="logo">
               <img src="images/logo.png" alt="아거스테 로고" />
@@ -66,39 +92,32 @@ class Myprofile extends Component {
               })}
             </ul>
           </div>
-          <div className="Membership">
-            <Mytear />
-              {gradeList.map((grade, index) =>{
-                return(
-                  <Tear 
-                    key={index}
-                    image={grade.image}
-                    name={grade.name}
-                    point={grade.point}
-                    birth={grade.birth}
-                    level={grade.levelup}
-                    grades={grade.tear}
-                  />
-                )
-              })}
+          <div className={`Membership ${userList.grade ? 'abc' : 'bcd'}`}>
+            {gradeList.map((grade, index) =>{
+              return(
+                <Tear 
+                  key={index}
+                  image={grade.image}
+                  name={grade.name}
+                  point={grade.point}
+                  birth={grade.birth}
+                  level={grade.levelup}
+                  grades={grade.tear}
+                />
+              )
+            })}
           </div>
           <div className="infoCont">
             <div className="userInfo">
-              {userList.map((user, index) => {
-                return(
-                  <React.Fragment key={index}>
-                    <ul>
-                      <li>내정보</li>
-                      <li>성명: {user.name}</li>
-                      <li>이메일: {user.email}</li>
-                      <li>생년월일: {user.birth}</li>
-                      <li>전화번호: {user.phone}</li>
-                      <li>비밀번호: {user.password}</li>
-                    </ul>
-                    <Link to='/'><span>수정</span></Link>
-                  </React.Fragment>
-                )
-              })}
+              <div className="test">
+                <p>{userList.email}</p>
+                <span 
+                  className={userList.is_active ? 'a' : 'b'}
+                  onClick={userList.is_active ? this.authsuccess : this.authHandle}
+                >
+                  { userList.is_active ? '인증완료' : '인증하세요' }
+                </span>
+              </div>
             </div>
             <div className="secondCont">
               {INFORMATION.map((info, index) => {
