@@ -1,11 +1,22 @@
 .Product {
-  padding-top: 80px;
+	padding-top: 80px;
+	
+  .product__img__wrap {
+
+    img {
+      max-width: 100%;
+    }
+	}
+	
   .container {
     padding: 0 80px;
     display: flex;
-    flex-wrap: wrap;
+		flex-wrap: wrap;
+		
     .ProductList {
       width: 25%;
+			margin: 25px 0;
+			
       .product__wrap {
         left: 0;
       }

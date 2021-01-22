@@ -23,7 +23,11 @@ class Product extends Component {
       <>
         <Navbar />
         <div className='Product'>
+        <div className="product__img__wrap">
+            <img src="/images/productBg.png" alt="상품 리스트 페이지 입니다."/>
+          </div>
           <div className='container'>
+
           {productListItem.map((item) => {
             return (
               <ProductList
