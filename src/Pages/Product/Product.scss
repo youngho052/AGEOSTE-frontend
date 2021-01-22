@@ -2,10 +2,25 @@
 	padding-top: 80px;
 	
   .product__img__wrap {
-
+		position: relative;
     img {
       max-width: 100%;
-    }
+		}
+		.product_title{
+			position: absolute;
+			top:50%;
+			transform: translateY(-50%);
+			left:80px;
+			
+			h2{
+				line-height: 2.0;
+				font-size:30px;
+				color:#fff;
+				span{
+					display: block;
+				}
+			}
+		}
 	}
 	
   .container {

@@ -1,0 +1,16 @@
+.Pageing{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  button{
+		width:40px;
+		height:40px;
+		margin:0 5px;
+		background-color: rgb(249, 249, 249);
+		border:1px solid #f2f2f2;
+		&.active{
+			background-color: rgb(138, 138, 138);
+			color:#fff;
+		}
+	}
+}
