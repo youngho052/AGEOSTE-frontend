@@ -103,7 +103,9 @@ $color-green: #105a33;
             text-decoration: none;
             color: black;
 
-            &:visited, &:focus, &:active {
+            &:visited,
+            &:focus,
+            &:active {
               text-decoration: none;
             }
 

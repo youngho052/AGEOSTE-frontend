@@ -17,24 +17,16 @@ class Navbar extends Component {
       menuList: NAVBAR_DATA,
     });
   };
-  // onMenuData = (id) => {
-  //   const menuList = this.state.menuList;
-  //   const submenuFind = menuList.find((item) => item.id === id);
-  //   this.setState({
-  //     submenu: submenuFind.submenu,
-  //   });
-  // };
+
 
   render() {
     return (
       <nav className='Navbar'>
-        <div className='nav'>
-          <Link to='/'>
-            <img src='images/logo.png' alt='ageoste홈페이지 로고입니다.' />
-          </Link>
-          <NavbarMenu onSubMenuList={this.state.menuList} />
-          <NavbarUser />
-        </div>
+        <Link to='/'>
+          <img src='/images/logo.png' alt='ageoste홈페이지 로고입니다.' />
+        </Link>
+        <NavbarMenu />
+        <NavbarUser />
       </nav>
     );
   }

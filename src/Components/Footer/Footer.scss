@@ -1,0 +1,29 @@
+.Footer {
+  font-size: 14px;
+
+  .footerInfo {
+    display: flex;
+    flex: 1;
+    padding: 25px;
+    font-size: 11px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #e6e6e6;
+    address,
+    .insurance {
+      flex: 1;
+      color: #a0a0a0;
+    }
+  }
+
+  .siteMap {
+    display: flex;
+    align-items: center;
+    padding: 40px 25px;
+    li {
+      color: #a0a0a0;
+      span {
+        padding: 0 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.FooterTopMenu {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px 0;
+
+  li {
+    text-align: center;
+
+    a {
+      color: rgb(62, 62, 62);
+
+      span {
+        margin-bottom: 15px;
+        font-size: 25px;
+      }
+    }
+  }
+}

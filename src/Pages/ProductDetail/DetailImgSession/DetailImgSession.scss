@@ -1,0 +1,30 @@
+.DetailImgSession {
+  display: flex;
+  padding: 50px 0;
+
+  .product__explanation {
+    padding:0 80px;
+    
+    h2 {
+      font-size: 30px;
+      color: #292929;
+    }
+
+    .product__code {
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    p {
+			margin:12px 0;
+			font-size: 14px;
+			word-break:keep-all;
+      color: rgb(121, 121, 121);
+    }
+    
+		.material{
+			line-height: 2.0;
+			color:rgb(121, 121, 121);
+		}
+  }
+}

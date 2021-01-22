@@ -1,15 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+.input__padding {
+  padding: 8px 12px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 body {
   font-family: 'Noto Sans KR', sans-serif;
+<<<<<<< HEAD
   font-size:14px;
+=======
+>>>>>>> main
   overflow-x: hidden;
 }
-.d_block{
+.d_block {
   display: block;
 }
+<<<<<<< HEAD
 .d__none{
   display: none;
 }
 .redColor{
   color:red;
 }
+=======
+
+
+>>>>>>> main
