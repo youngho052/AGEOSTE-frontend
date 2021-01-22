@@ -28,7 +28,7 @@ class Myprofile extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/data.json')
+    fetch('/data/userData.json')
       .then(response => response.json())
       .then(result => this.setState({gradeList : result}))
     
@@ -67,7 +67,6 @@ class Myprofile extends Component {
 
   render() {
     const { gradeList, userInfo} = this.state;
-    console.log(userInfo.is_active)
 
     return (
       <>
@@ -127,7 +126,7 @@ class Myprofile extends Component {
                     </button>
                   </div>
                   <p>휴대폰 번호: {userInfo.phone_number}</p>
-                  <p>생일: {userInfo.date_of_birth === null ? '없다' : userInfo.date_of_birth}</p>
+                  <p>생일: {userInfo.date_of_birth === null ? '생일을 등록해주세요.' : userInfo.date_of_birth}</p>
                 </div>
               </div>
               <div className="secondCont">

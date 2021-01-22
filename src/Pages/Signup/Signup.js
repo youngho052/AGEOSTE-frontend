@@ -112,8 +112,7 @@ class Signup extends Component{
     const checkEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i.test(id);
     const checkPhone =  /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/.test(phone);
     const checkBirth = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/.test(birth);
-    
-    console.log({username, id, password, againpw, phone, birth});
+  
     return(
       <>
       <Navbar />

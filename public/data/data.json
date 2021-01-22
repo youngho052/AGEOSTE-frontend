@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
   "PRODUCTS_LIST":[
       {
@@ -49,34 +49,3 @@
   ]
 }
 
-=======
-[
-  {
-    "tear": "10만원 이상시",
-    "point": "3%",
-    "birth": "2만원",
-    "levelup": "3,000포인트",
-    "image": "images/Silver.png",
-    "name": "Silver",
-    "membership": "silver"
-  },
-  {
-    "tear": "80만원 이상시",
-    "point": "5%",
-    "birth": "3만원",
-    "levelup": "10,000포인트",
-    "image": "images/Gold.png",
-    "name": "GOLD",
-    "membership": "gold"
-  },
-  {
-    "tear": "200만원 이상시",
-    "point": "7%",
-    "birth": "4만원",
-    "levelup": "20,000포인트",
-    "image": "images/Ageoste.png",
-    "name": "VIP",
-    "membership": "vip"
-  }
-]
->>>>>>> main
