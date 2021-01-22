@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import NavbarMenu from './Components/NavbarMenu';
-import NavbarUser from './Components/NavbarUser';
+import NavbarMenu from './Components/NavbarMenu/NavbarMenu';
+import NavbarUser from './Components/NavbarUser/NavbarUser';
+import { NAVBAR_DATA } from './data/NavbarData';
+import '../Navbar/Navbar.scss';
 
-import '../Navbar/Navbar.scss'
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuList: [],
+    };
+  }
+  componentDidMount = () => {
+    this.setState({
+      menuList: NAVBAR_DATA,
+    });
+  };
+
+
   render() {
     return (
       <nav className='Navbar'>
