@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Footer from '../../Components/Footer/Footer';
-
 import Navbar from '../../Components/Navbar/Navbar';
 import { PROMOTION, SEASON_OFF } from './data/MainData';
 import MainPromotions from './Components/MainPromotions/MainPromotions';
-
 import CollectionSlider from '../../Components/CollectionSlider/CollectionSlider';
 import WearCollection from '../../Components/WearCollection/WearCollection';
 import MainSalesList from './Components/MainSalesList/MainSalesList';
@@ -68,6 +66,7 @@ class Main extends Component {
             <ProductListSlider productListItem={productList} />
           </section>
         </main>
+        <Footer />
       </>
     );
   }
