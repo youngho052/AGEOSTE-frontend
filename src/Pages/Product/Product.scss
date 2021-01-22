@@ -1,0 +1,14 @@
+.Product {
+  padding-top: 80px;
+  .container {
+    padding: 0 80px;
+    display: flex;
+    flex-wrap: wrap;
+    .ProductList {
+      width: 25%;
+      .product__wrap {
+        left: 0;
+      }
+    }
+  }
+}
