@@ -7,7 +7,7 @@ class WearCollection extends Component {
     return (
       <div className='WearCollection'>
         <img
-          src='https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw549cc0ae/2020/FW20/Modular_V3/poloshop-new/StrateStory-Desk_cosy.jpg?imwidth=1065&impolicy=custom'
+          src='https://lh6.googleusercontent.com/B5oSu75kdNYXvkD9DmVoqnN-QOUa_7bB0_EVUdbcpeHVWbmkVqndv7yH0BJeUk26qSaWRpkAc9LpqSezfZJf=w1920-h937-rw'
           alt='아고스테 후드 스웻셔츠 트레이닝 팬츠와 함께하는 집곡생활'
         />
         <div className='sportsWrap'>
