@@ -1,0 +1,40 @@
+.Product {
+	padding-top: 80px;
+	
+  .product__img__wrap {
+		position: relative;
+    img {
+      max-width: 100%;
+		}
+		.product_title{
+			position: absolute;
+			top:50%;
+			transform: translateY(-50%);
+			left:80px;
+			
+			h2{
+				line-height: 2.0;
+				font-size:30px;
+				color:#fff;
+				span{
+					display: block;
+				}
+			}
+		}
+	}
+	
+  .container {
+    padding: 0 80px;
+    display: flex;
+		flex-wrap: wrap;
+		
+    .ProductList {
+      width: 25%;
+			margin: 25px 0;
+			
+      .product__wrap {
+        left: 0;
+      }
+    }
+  }
+}

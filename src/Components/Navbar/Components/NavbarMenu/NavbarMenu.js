@@ -2,29 +2,27 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../NavbarMenu/NavbarMenu.scss';
-class NavbarMenu extends Component {
-  onFindId = (id) => {
-    this.props.updateSubMenu(id);
-  };
 
+class NavbarMenu extends Component {
   render() {
-    const{onSubMenuList} = this.props;
+    const { menuList } = this.props;
+    const productLink = ['/product', '/product', '/product'];
     return (
       <div className='NavbarMenu'>
-        <ul className='gnbMenu'>
-          {onSubMenuList.map((item) => {
+        <ul>
+          {menuList.map((item, idx) => {
             return (
               <li
-                key={item.id}
-                className={`${
-                  item.menuName === '나의 라코스테 폴로' ? 'hoverNot' : ''
-                } ${item.menuName === 'SALE' ? 'myPolo' : ''}`}>
-                <Link to='/login'>{item.menuName}</Link>
+                key={item.div}
+                className={
+                  item.menuName === '나의 라코스테 폴로' ? 'myPolo' : ''
+                }>
+                <Link to={productLink[idx]}>{item.menuName}</Link>
               </li>
             );
           })}
         </ul>
-        {/* <NavbarSubMenu subMenu={this.props.sendMenuList} /> */}
+
       </div>
     );
   }

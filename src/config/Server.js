@@ -11,3 +11,4 @@
 export const SERVER = 'http://18.222.226.44:8000';
 export const PRODUCT_DETAIL = `${SERVER}/product`;
 export const PRODUCT_LIST = `${SERVER}/product?order=?&page_count=8`;
+export const PRODUCT = `${SERVER}/product?sub_category`;

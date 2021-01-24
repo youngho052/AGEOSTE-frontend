@@ -97,7 +97,7 @@ class ProductDetail extends Component {
       this.setState({
         toggle:!this.state.toggle
       })
-      }, 3000) 
+      }, 2500) 
   };
   render() {
     const {
