@@ -4,7 +4,7 @@ import { SERVER_ACCOUNT } from "../../config/Server";
 
 export const userData = (data) => {
   return {
-    action: USER_DATA,
+    type: USER_DATA,
     payload: data,
   };
 };
@@ -16,7 +16,7 @@ export const setData = () => async (dispatch) => {
         Authorization: localStorage.getItem("token"),
       },
     });
-    dispatch(userData(responese));
+    dispatch(userData(responese.data));
   } catch (msg) {
     console.log(msg);
   }

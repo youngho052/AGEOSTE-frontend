@@ -108,7 +108,7 @@ class Myprofile extends Component {
               {gradeList.map((grade, index) => {
                 return (
                   <div className="Tear" key={index}>
-                    {!!userInfo.membership && (
+                    {userInfo.membership && (
                       <div
                         className={`member ${
                           userInfo.membership.grade === grade.membership &&

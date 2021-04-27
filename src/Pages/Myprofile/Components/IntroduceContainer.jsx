@@ -1,14 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { NAV_DATA } from "../Data/mockData";
 
 function IntroduceContainer() {
+  const userName = useSelector((store) => store.dataReducer.accounts?.name);
+
   return (
     <>
       <IntroUser>
         <UserIntro>
           <IntroSpan>
-            안녕하세요 님 마이페이지에 오신 것을 환영합니다.
+            안녕하세요 {userName}님 마이페이지에 오신 것을 환영합니다.
           </IntroSpan>
         </UserIntro>
         <PageLogo>
