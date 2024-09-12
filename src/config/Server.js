@@ -8,7 +8,11 @@
 // export const PRODUCT_LIST = `${SERVER}/product?order=?&page_count=8`;
 
 // AWS 수아님
-export const SERVER = 'http://18.222.226.44:8000';
+export const SERVER = "http://3.128.153.123:8000";
+export const SIGN_IN = `${SERVER}/user/signin`;
+export const SIGN_UP = `${SERVER}/user/signup`;
+export const SERVER_ACCOUNT = `${SERVER}/user/account`;
+export const SERVER_AUTH = `${SERVER}/user/emailauth`;
 export const PRODUCT_DETAIL = `${SERVER}/product`;
 export const PRODUCT_LIST = `${SERVER}/product?order=?&page_count=8`;
 export const PRODUCT = `${SERVER}/product?sub_category`;
